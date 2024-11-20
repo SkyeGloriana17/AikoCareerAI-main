@@ -1,0 +1,32 @@
+@model CareerAI.Models.ViewModel.VerifyOtpViewModel
+@{
+    Layout = "_AccountLayout";
+    ViewData["Title"] = "Verify OTP";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/global.css" /> 
+    <link rel="stylesheet" href="~/css/ForgotPassword.css" /> 
+}
+
+<div class="main-container">
+    <div class="left">
+        <img src="/assets/ForgotPass/forgot-pass-image.svg">
+    </div>
+    <div class="right">
+        <h1>FORGOT</h1>
+        <h2>PASSWORD?</h2>
+        <p class="message2">Enter the OTP sent to your device to proceed</iframe>.</p>
+        <form id="verifyOtpForm" asp-action="VerifyOtp" method="post">
+            <label> OTP </label>
+            <input type="hidden" asp-for="Email" name="Email" value="@Model.Email"/>
+            <input type="text" name="Otp" class="input" asp-for="Otp" placeholder="OTP" required />
+            <input type="submit" value="SUBMIT" class="submit-btn2">
+        </form>
+        <p class="signup-text">Didn't get the OTP <a href="/Account/ForgotPassword"><span class="resend"a>Resend here</span></a></p>
+    </div>
+</div>
+  
+
+
+

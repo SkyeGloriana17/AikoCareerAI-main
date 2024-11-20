@@ -1,0 +1,236 @@
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.left-container {
+    padding: 4.6% 6%;
+    width: 67%;
+    background-color: #FCF4E7;
+    height: 100vh;
+}
+
+
+.right-container {
+    width: 33%;
+    padding: 4.6% 4% 4.6% 5%;
+    background-color: #202C4D;
+    background-image: url('/assets/Login/bg-left.svg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.logo-top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo-top img {
+    margin-left: 4.5%;
+}
+
+.logo-top h3 {
+    font-family:'Montserrat';
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.logo-top h2 {
+    font-family:'Ultra';
+    font-weight:200;
+    color: white;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.aiko-img {
+    margin: 14.5% 0 13% 0;
+    display: flex;
+    justify-content: center;
+}
+
+.aiko-img img {
+    width: 88%;
+}
+
+.welcome-title {
+    text-align:center;
+    color: white;
+    font-family: 'Montserrat';
+    margin-bottom: 5%;
+    font-size: 2.3rem;
+}
+
+.message {
+    text-align: center;
+    color: white;
+    margin-bottom: 3%;
+    font-family: 'Montserrat';
+    font-weight: 200;
+}
+
+.sign-up-title {
+    font-family:'Ultra';
+    color: #202C4D;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+    margin-bottom: 2%;
+    font-weight: 200;
+}
+
+.sign-in-message {
+    font-family:'Montserrat';
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: #888888;
+}
+
+.input-container {
+    margin-top: 4%;
+}
+
+.input {
+    margin-bottom: 2%;
+}
+
+label {
+    font-family:'Montserrat';
+    font-weight: 600;
+    color:#202C4D;
+    font-size:1rem;
+}
+
+input[type="email"],input[type="text"],input[type="password"] {
+    width: 100%;
+    padding: .8rem 1.5rem;
+    margin: .5rem 0 ;
+    border: 2.5px solid #302F35;
+    border-radius: 30px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #202C4D;
+    outline: none;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; 
+}
+
+.register-function {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4%;
+}
+
+.show-pass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resend-email {
+    background: none;
+    border: none;
+    color: #5C5C5C;
+    font-weight: 700;
+    font-family:'Montserrat';
+    font-size: .95rem;
+    text-decoration: underline;
+}
+
+.show-pass p {
+    color: #E05723;
+    font-family:'Montserrat';
+    font-weight: bold;
+    font-size: .95rem;
+    margin-right: 10px;
+}
+
+#toggleShowPassword {
+    background: none;
+    border: none;
+    cursor:pointer;
+}
+
+.toggle-password-btn {
+    display: flex;
+    align-items: center;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color:#FFD661;
+    border:2px solid black;
+    padding: 1.5% 0;
+    border-radius: 30px;
+    font-family:'Montserrat';
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: #202C4D;
+}
+
+.submit-btn {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #FCF4E7;
+    cursor: pointer;
+    transform: scale(0.98);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    opacity: 0.9; 
+}
+
+.sign-in {
+    margin: 4% 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat';
+    color: #202C4D;
+}
+
+.signup-text {
+    font-weight: bold;
+}
+
+.login {
+    color: #202C4D;
+    font-weight: 500;
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+
+@media (min-width: 1920px) {
+    input[type="email"],input[type="text"],input[type="password"] {
+        padding: 1.3rem 1.5rem;
+    }
+}
+
+/*for laptops*/
+@media (min-width: 1024px) and (max-width: 1440px){
+	body{
+		font-size: 20px;
+	}
+}
+
+/*for desktops*/
+@media (min-width: 1441px)){
+	body{
+		font-size: 22px;
+	}
+}

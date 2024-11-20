@@ -1,0 +1,101 @@
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.title-page {
+    font-family:'Ultra';
+    font-weight: 500;
+    color: #252E49;
+    font-size: 2.25rem;
+}
+
+.title-section img {
+    width: 6.5%;
+}
+
+.result-box {
+    min-height: 50vh;
+    margin: 4% 0;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 3% 4%;
+    font-family: 'Montserrat';
+    color: #252E49;
+    cursor:pointer;
+}
+
+.result-box h1 {
+    font-family:'Ultra';
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 2%;
+}
+
+.print {
+    font-family: 'Ultra';
+    font-weight: 500;
+    color: #252E49;
+    width: 100%;
+    padding: 2% 5%;
+    background-color: #CCDEFF;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: 1.3rem;
+}
+
+.print:hover {
+    cursor:pointer;
+    background-color: #95b4ee;
+}
+
+.actions {
+    margin-top: 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 6%;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: #202C4D;
+    font-size: 1.3rem;
+    align-items: center;
+}
+
+.actions-btn {
+    margin-top: 4%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 6%;
+    text-align: center;
+}
+
+
+.actions-btn button {
+    padding: 4% 5%;
+    font-family: 'Ultra';
+    font-weight: 500;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: 1.1rem;
+    color: #202C4D;
+    cursor:pointer;
+}
+
+.assessment-btn {
+    background-color: #FDC0D2;
+}
+
+.assessment-btn:hover {
+    background-color: #f29cb5;
+}
+
+.chat-aiko-btn {
+    background-color: #FFD662;
+}
+
+.chat-aiko-btn:hover {
+    background-color: #ebb72a;
+}

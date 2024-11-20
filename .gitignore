@@ -1,0 +1,11 @@
+# Ignore .env file
+.env
+
+# Ignore Visual Studio Code settings
+.vscode
+.vs
+
+# Ignore build outputs 
+bin/
+obj/
+net8.0/

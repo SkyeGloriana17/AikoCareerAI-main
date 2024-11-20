@@ -1,0 +1,912 @@
+﻿@{
+    Layout = "_Sidebar";
+    ViewData["Title"] = "Homepage";
+    ViewData["ShowRightSidebar"] = "false";
+    ViewBag.ShowSpecialNavItem = true;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AssessmentPage.css" /> 
+}
+
+<div class="main-top">
+    <div class="left-side-top">
+        <div class="search-bar">
+                  <input type="text" name="q" id="searchBar" placeholder="Search anything" class="search-box">
+                <img src="/assets/Homepage/search-icon.svg" alt="Search">
+        </div>
+    </div>
+    <div class="right-side-top">
+        <button class="dev-btn" id="dev-btns">
+            <img src="/assets/Homepage/dev-icon.svg">
+        </button>
+        <div class="account-infos">
+            <img class="account-icons" src="/assets/Assessment/user-icon.svg">
+            <div class="account-name">
+                <h1>Joey R. Visaya Jr.</h1>
+                <p>You'll find your career today</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="title">Assessment</h1>
+
+<div class="banner">
+    <div class="left-banner-container">
+        <button class="title-banner-left">Introduction</button>
+        <div class="left-banner">
+            <div class="left-left-banner">
+                <h1>Hello Username</h1>
+                <p>UMAKareer is a user-friendly website that provides career path suggestions based on your answer to questions.</p>
+                <h2>This website is powered by Gemini AI.</h2>
+            </div>
+            <div class="left-right-banner">
+                <img src="/assets/Assessment/banner-image.svg">
+            </div>
+        </div>
+    </div>
+    <div class="right-banner-container">
+        <button class="title-banner-right">Importance</button>
+        <div class="right-banner">
+            <button class="right-banner-title">Career AI</button>
+            <p>UMAKareer is a user-friendly website that provides career path suggestions based on your answer to questions. yap yapyap yap yap yap</p>
+            <button class="find-career">Find your career here</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="first-assessment" class="assessment-category">
+    <div class="left-category">
+        <img src="/assets/Assessment/demographic-icon.svg">
+        <h2>DEMOGRAPHIC PROFILE</h2>
+    </div>
+    <div class="right-category">
+    <p>Demographic profiles align career advice with age and interests.</p>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>1. What is your age?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="age1">
+            <input type="radio" name="age" id="age1">
+            A. 15-19
+        </label>
+        <label class="choice" for="age2">
+            <input type="radio" name="age" id="age2">
+            B. 20-24
+        </label>
+        <label class="choice" for="age3">
+            <input type="radio" name="age" id="age3">
+            C. 25-30
+        </label>
+        <label class="choice" for="age4">
+            <input type="radio" name="age" id="age4">
+            D. 31 and older
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>2. What is your gender?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="gender1">
+            <input type="radio" name="gender" id="gender1">
+            A. Male
+        </label>
+        <label class="choice" for="gender2">
+            <input type="radio" name="gender" id="gender2">
+            B. Female
+        </label>
+        <label class="choice" for="gender3">
+            <input type="radio" name="gender" id="gender3">
+            C. Genderqueer
+        </label>
+        <label class="choice" for="gender4">
+            <input type="radio" name="gender" id="gender4">
+            D. Prefer not to say
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>3. What is your preferred work schedule?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="schedule1">
+            <input type="radio" name="schedule" id="schedule1">
+            A. Traditional 9–5
+        </label>
+        <label class="choice" for="schedule2">
+            <input type="radio" name="schedule" id="schedule2">
+            B. Flexible hours
+        </label>
+        <label class="choice" for="schedule3">
+            <input type="radio" name="schedule" id="schedule3">
+            C. Rotating shifts
+        </label>
+        <label class="choice" for="schedule4">
+            <input type="radio" name="schedule" id="schedule4">
+            D. Project-based
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>4. What is your highest level of education?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="education1">
+            <input type="radio" name="education" id="education1">
+            A. High school or equivalent
+        </label>
+        <label class="choice" for="education2">
+            <input type="radio" name="education" id="education2">
+            B. College
+        </label>
+        <label class="choice" for="education3">
+            <input type="radio" name="education" id="education3">
+            C. Bachelor's degree
+        </label>
+        <label class="choice" for="education4">
+            <input type="radio" name="education" id="education4">
+            D. Graduate degree or higher
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>5. What level of independence do you prefer in your work?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="independence1">
+            <input type="radio" name="independence" id="independence1">
+            A. I enjoy clear guidance and teamwork
+        </label>
+        <label class="choice" for="independence2">
+            <input type="radio" name="independence" id="independence2">
+            B. I prefer independence with occasional support
+        </label>
+        <label class="choice" for="independence3">
+            <input type="radio" name="independence" id="independence3">
+            C. I work best independently with little oversight
+        </label>
+        <label class="choice" for="independence4">
+            <input type="radio" name="independence" id="independence4">
+            D. I thrive in fully autonomous, self-directed roles
+        </label>
+    </div>
+</div>
+
+        
+
+<br>
+<div class="assessment-category">
+    <div class="left-category">
+        <img id="interest" src="/assets/Assessment/interest-icon.svg">
+        <h2>INTERESTS</h2>
+    </div>
+    <div class="right-category">
+    <p>Interest profiles match careers to your passions, helping you find aligned paths.</p>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>1. Which of the following best describes your ideal weekend?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="weekend1">
+            <input type="radio" name="weekend" id="weekend1">
+            A. Attending a workshop or seminar
+        </label>
+        <label class="choice" for="weekend2">
+            <input type="radio" name="weekend" id="weekend2">
+            B. Going to an art gallery or concert
+        </label>
+        <label class="choice" for="weekend3">
+            <input type="radio" name="weekend" id="weekend3">
+            C. Hiking or an outdoor activity
+        </label>
+        <label class="choice" for="weekend4">
+            <input type="radio" name="weekend" id="weekend4">
+            D. Relaxing at home and reading
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>2. Which activity do you enjoy the most?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="activity1">
+            <input type="radio" name="activity" id="activity1">
+            A. Solving puzzles or brain games
+        </label>
+        <label class="choice" for="activity2">
+            <input type="radio" name="activity" id="activity2">
+            B. Creating art or music
+        </label>
+        <label class="choice" for="activity3">
+            <input type="radio" name="activity" id="activity3">
+            C. Engaging in physical sports
+        </label>
+        <label class="choice" for="activity4">
+            <input type="radio" name="activity" id="activity4">
+            D. Socializing or meeting new people
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>3. If you could turn any hobby into a full-time career, what would it be?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="hobby_career1">
+            <input type="radio" name="hobby_career" id="hobby_career1">
+            A. Helping others improve their lives
+        </label>
+        <label class="choice" for="hobby_career2">
+            <input type="radio" name="hobby_career" id="hobby_career2">
+            B. Solving complex problems or designing systems
+        </label>
+        <label class="choice" for="hobby_career3">
+            <input type="radio" name="hobby_career" id="hobby_career3">
+            C. Discovering new places or working with nature
+        </label>
+        <label class="choice" for="hobby_career4">
+            <input type="radio" name="hobby_career" id="hobby_career4">
+            D. Creating or performing art that connects with others
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>4. If you could volunteer for one cause, which would it be?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="volunteer1">
+            <input type="radio" name="volunteer" id="volunteer1">
+            A. Environmental conservation
+        </label>
+        <label class="choice" for="volunteer2">
+            <input type="radio" name="volunteer" id="volunteer2">
+            B. Helping underprivileged communities
+        </label>
+        <label class="choice" for="volunteer3">
+            <input type="radio" name="volunteer" id="volunteer3">
+            C. Animal rescue and welfare
+        </label>
+        <label class="choice" for="volunteer4">
+            <input type="radio" name="volunteer" id="volunteer4">
+            D. Arts and cultural preservation
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>5. If you could take a free class, what would it be?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="class1">
+            <input type="radio" name="class" id="class1">
+            A. Digital or visual arts
+        </label>
+        <label class="choice" for="class2">
+            <input type="radio" name="class" id="class2">
+            B. Engineering or architecture
+        </label>
+        <label class="choice" for="class3">
+            <input type="radio" name="class" id="class3">
+            C. Data science or analytics
+        </label>
+        <label class="choice" for="class4">
+            <input type="radio" name="class" id="class4">
+            D. Communication or leadership skills
+        </label>
+    </div>
+</div>
+    
+
+
+    <br>
+<div class="assessment-category">
+    <div class="left-category">
+        <img id="skills" src="/assets/Assessment/skills-icon.svg">
+        <h2>SKILLS</h2>
+    </div>
+    <div class="right-category">
+    <p>Skill profiles tailor career advice to your abilities.</p>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>1. Which of the following best describes your ideal work environment?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="work_environment1">
+            <input type="radio" name="work_environment" id="work_environment1">
+            A. A structured environment with clear guidelines and expectations
+        </label>
+        <label class="choice" for="work_environment2">
+            <input type="radio" name="work_environment" id="work_environment2">
+            B. A creative setting where you can brainstorm and innovate
+        </label>
+        <label class="choice" for="work_environment3">
+            <input type="radio" name="work_environment" id="work_environment3">
+            C. A collaborative team where you can connect with others
+        </label>
+        <label class="choice" for="work_environment4">
+            <input type="radio" name="work_environment" id="work_environment4">
+            D. A flexible environment that allows for independent work
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>2. How would you rate your teamwork skills?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="teamwork_skills1">
+            <input type="radio" name="teamwork_skills" id="teamwork_skills1">
+            A. Excellent - I thrive in group settings
+        </label>
+        <label class="choice" for="teamwork_skills2">
+            <input type="radio" name="teamwork_skills" id="teamwork_skills2">
+            B. Good - I enjoy working with others
+        </label>
+        <label class="choice" for="teamwork_skills3">
+            <input type="radio" name="teamwork_skills" id="teamwork_skills3">
+            C. Fair - I prefer independent work but can collaborate
+        </label>
+        <label class="choice" for="teamwork_skills4">
+            <input type="radio" name="teamwork_skills" id="teamwork_skills4">
+            D. Poor - I work best alone
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>3. What’s your strongest quality in a work environment?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="strongest_quality1">
+            <input type="radio" name="strongest_quality" id="strongest_quality1">
+            A. Analytical thinking
+        </label>
+        <label class="choice" for="strongest_quality2">
+            <input type="radio" name="strongest_quality" id="strongest_quality2">
+            B. Creativity
+        </label>
+        <label class="choice" for="strongest_quality3">
+            <input type="radio" name="strongest_quality" id="strongest_quality3">
+            C. Communication
+        </label>
+        <label class="choice" for="strongest_quality4">
+            <input type="radio" name="strongest_quality" id="strongest_quality4">
+            D. Practical skills
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>4. What type of project excites you the most?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="project_type1">
+            <input type="radio" name="project_type" id="project_type1">
+            A. Research and analysis
+        </label>
+        <label class="choice" for="project_type2">
+            <input type="radio" name="project_type" id="project_type2">
+            B. Team-based and collaborative
+        </label>
+        <label class="choice" for="project_type3">
+            <input type="radio" name="project_type" id="project_type3">
+            C. Practical and hands-on
+        </label>
+        <label class="choice" for="project_type4">
+            <input type="radio" name="project_type" id="project_type4">
+            D. Creative and design-focused
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>5. How do you prefer to work on tasks?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="task_preference1">
+            <input type="radio" name="task_preference" id="task_preference1">
+            A. With structure and a clear plan
+        </label>
+        <label class="choice" for="task_preference2">
+            <input type="radio" name="task_preference" id="task_preference2">
+            B. With flexibility to explore new ideas
+        </label>
+        <label class="choice" for="task_preference3">
+            <input type="radio" name="task_preference" id="task_preference3">
+            C. With lots of interaction and collaboration
+        </label>
+        <label class="choice" for="task_preference4">
+            <input type="radio" name="task_preference" id="task_preference4">
+            D. Independently and efficiently
+        </label>
+    </div>
+</div>
+
+    <br>
+<div class="assessment-category">
+    <div class="left-category">
+        <img id="personality" src="/assets/Assessment/personality-icon.svg">
+        <h2>Personality</h2>
+    </div>
+    <div class="right-category">
+    <p>Personality profiles match careers to your traits.</p>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>1. How do you feel about managing or leading others?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="leadership_feelings1">
+            <input type="radio" name="leadership_feelings" id="leadership_feelings1">
+            A. I enjoy taking charge and leading a team.
+        </label>
+        <label class="choice" for="leadership_feelings2">
+            <input type="radio" name="leadership_feelings" id="leadership_feelings2">
+            B. I prefer to be a supportive team member.
+        </label>
+        <label class="choice" for="leadership_feelings3">
+            <input type="radio" name="leadership_feelings" id="leadership_feelings3">
+            C. I don’t mind leading occasionally but prefer not to manage full-time.
+        </label>
+        <label class="choice" for="leadership_feelings4">
+            <input type="radio" name="leadership_feelings" id="leadership_feelings4">
+            D. I prefer focusing on my work without leadership responsibilities.
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>2. What’s your ideal way of celebrating a work accomplishment?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="celebration_type1">
+            <input type="radio" name="celebration_type" id="celebration_type1">
+            A. Reflecting on what went well and setting new goals
+        </label>
+        <label class="choice" for="celebration_type2">
+            <input type="radio" name="celebration_type" id="celebration_type2">
+            B. Sharing your success with others in a creative way
+        </label>
+        <label class="choice" for="celebration_type3">
+            <input type="radio" name="celebration_type" id="celebration_type3">
+            C. Presenting your results in a clear, organized report
+        </label>
+        <label class="choice" for="celebration_type4">
+            <input type="radio" name="celebration_type" id="celebration_type4">
+            D. Spending time with people who supported you along the way
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>3. What type of accomplishment is most fulfilling to you?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="accomplishment_type1">
+            <input type="radio" name="accomplishment_type" id="accomplishment_type1">
+            A. Seeing a well-executed project come together.
+        </label>
+        <label class="choice" for="accomplishment_type2">
+            <input type="radio" name="accomplishment_type" id="accomplishment_type2">
+            B. Creating something visually or technically impressive.
+        </label>
+        <label class="choice" for="accomplishment_type3">
+            <input type="radio" name="accomplishment_type" id="accomplishment_type3">
+            C. Solving a problem others couldn’t figure out.
+        </label>
+        <label class="choice" for="accomplishment_type4">
+            <input type="radio" name="accomplishment_type" id="accomplishment_type4">
+            D. Knowing my work had a positive impact on someone’s life.
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>4. How do you typically handle constructive criticism?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="criticism_handling1">
+            <input type="radio" name="criticism_handling" id="criticism_handling1">
+            A. I reflect on it to improve and refine my work.
+        </label>
+        <label class="choice" for="criticism_handling2">
+            <input type="radio" name="criticism_handling" id="criticism_handling2">
+            B. I see it as a learning experience and ask for feedback.
+        </label>
+        <label class="choice" for="criticism_handling3">
+            <input type="radio" name="criticism_handling" id="criticism_handling3">
+            C. I focus on what I did right and use the advice to tweak things.
+        </label>
+        <label class="choice" for="criticism_handling4">
+            <input type="radio" name="criticism_handling" id="criticism_handling4">
+            D. I use it to fuel my motivation to do even better.
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>5. How do you feel about taking risks in your work?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="risk_feelings1">
+            <input type="radio" name="risk_feelings" id="risk_feelings1">
+            A. I prefer to stick to safe, tried-and-true methods
+        </label>
+        <label class="choice" for="risk_feelings2">
+            <input type="radio" name="risk_feelings" id="risk_feelings2">
+            B. I enjoy calculated risks that could lead to creative breakthroughs
+        </label>
+        <label class="choice" for="risk_feelings3">
+            <input type="radio" name="risk_feelings" id="risk_feelings3">
+            C. I take risks only when I have solid data backing them up
+        </label>
+        <label class="choice" for="risk_feelings4">
+            <input type="radio" name="risk_feelings" id="risk_feelings4">
+            D. I’m open to risks if they help others or bring people together
+        </label>
+    </div>
+</div>
+
+
+    <br>
+<div class="assessment-category">
+    <div class="left-category">
+        <img id="values" src="/assets/Assessment/values-icon.svg">
+        <h2>Values</h2>
+    </div>
+    <div class="right-category">
+    <p>Value profiles align career paths with your principles.</p>
+    </div>
+</div>
+
+   <div class="question-container">
+    <div class="title-question">
+        <h1>1. What motivates you to wake up and work every day?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="motivation_to_work1">
+            <input type="radio" name="motivation_to_work" id="motivation_to_work1">
+            A. The freedom to pursue my own passions
+        </label>
+        <label class="choice" for="motivation_to_work2">
+            <input type="radio" name="motivation_to_work" id="motivation_to_work2">
+            B. The chance to help others and create change
+        </label>
+        <label class="choice" for="motivation_to_work3">
+            <input type="radio" name="motivation_to_work" id="motivation_to_work3">
+            C. The rewards and recognition from achieving goals
+        </label>
+        <label class="choice" for="motivation_to_work4">
+            <input type="radio" name="motivation_to_work" id="motivation_to_work4">
+            D. The thrill of creating or discovering something new
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>2. If you had a role that could change society, how would you want to use it?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="role_to_change_society1">
+            <input type="radio" name="role_to_change_society" id="role_to_change_society1">
+            A. Addressing major global issues and challenges such as climate change
+        </label>
+        <label class="choice" for="role_to_change_society2">
+            <input type="radio" name="role_to_change_society" id="role_to_change_society2">
+            B. Introducing new ideas and technologies to the world
+        </label>
+        <label class="choice" for="role_to_change_society3">
+            <input type="radio" name="role_to_change_society" id="role_to_change_society3">
+            C. Supporting and uplifting underrepresented groups
+        </label>
+        <label class="choice" for="role_to_change_society4">
+            <input type="radio" name="role_to_change_society" id="role_to_change_society4">
+            D. Promoting economic stability and prosperity
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>3. What kind of career success story resonates with you the most?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="career_success_story1">
+            <input type="radio" name="career_success_story" id="career_success_story1">
+            A. Someone who rose to the top of their field through hard work
+        </label>
+        <label class="choice" for="career_success_story2">
+            <input type="radio" name="career_success_story" id="career_success_story2">
+            B. Someone who led a team to achieve something great
+        </label>
+        <label class="choice" for="career_success_story3">
+            <input type="radio" name="career_success_story" id="career_success_story3">
+            C. Someone who invented or created something original
+        </label>
+        <label class="choice" for="career_success_story4">
+            <input type="radio" name="career_success_story" id="career_success_story4">
+            D. Someone who improved their community or helped others
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>4. When faced with a challenging task, what motivates you to complete it?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="motivation_to_complete_task1">
+            <input type="radio" name="motivation_to_complete_task" id="motivation_to_complete_task1">
+            A. Personal achievement and growth
+        </label>
+        <label class="choice" for="motivation_to_complete_task2">
+            <input type="radio" name="motivation_to_complete_task" id="motivation_to_complete_task2">
+            B. The chance to think outside of the box
+        </label>
+        <label class="choice" for="motivation_to_complete_task3">
+            <input type="radio" name="motivation_to_complete_task" id="motivation_to_complete_task3">
+            C. Knowing it will make a positive impact on others
+        </label>
+        <label class="choice" for="motivation_to_complete_task4">
+            <input type="radio" name="motivation_to_complete_task" id="motivation_to_complete_task4">
+            D. The satisfaction of achieving a shared goal
+        </label>
+    </div>
+</div>
+
+<div class="question-container">
+    <div class="title-question">
+        <h1>5. What do you value most in a mentor or a leader?</h1>
+    </div>
+    <hr>
+    <div class="choice-section">
+        <label class="choice" for="mentor_leader_values1">
+            <input type="radio" name="mentor_leader_values" id="mentor_leader_values1">
+            A. Emphasis on team-building and cooperation
+        </label>
+        <label class="choice" for="mentor_leader_values2">
+            <input type="radio" name="mentor_leader_values" id="mentor_leader_values2">
+            B. Clear direction and focus on personal growth
+        </label>
+        <label class="choice" for="mentor_leader_values3">
+            <input type="radio" name="mentor_leader_values" id="mentor_leader_values3">
+            C. Compassion and focus on personal well-being
+        </label>
+        <label class="choice" for="mentor_leader_values4">
+            <input type="radio" name="mentor_leader_values" id="mentor_leader_values4">
+            D. Willingness to challenge norms and inspire creativity
+        </label>
+    </div>
+</div>
+
+<button type="submit" class="submit-btn">
+    SUBMIT ANSWERS
+</button>
+
+<!-- Popup Dev -->
+<div id="devPopup" class="popup" style="display: none;">
+    <div class="popup-content" id="devPopup-content">
+        <div class="top-popup">
+            <div class="title-popup">
+                <img src="/assets/Homepage/dev-icon-popup.svg">
+                <div>
+                    <h1> Developers of Website </h1>
+                    <h2> Developed December 1, 2024  </h2>
+                </div>
+            </div>
+            <img src="/assets/Homepage/close-btn.svg" class="close-btn" id="close-btn">
+        </div>
+        <div class="main-popup" id="main-popup-dev">
+           <img src=" /assets/Homepage/joey-dev.svg">
+           <img src=" /assets/Homepage/joey-dev.svg">
+           <img src=" /assets/Homepage/joey-dev.svg">
+           <img src=" /assets/Homepage/joey-dev.svg">
+        </div>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBar = document.getElementById("searchBar");
+    let currentMatchIndex = -1;  // Keeps track of the current match
+    let matchedElements = [];  // Array to store matched elements
+
+    // Search bar functionality
+    searchBar.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {  // Only trigger when Enter is pressed
+            var searchTerm = this.value.trim().toLowerCase();  // Get the search term and make it lowercase
+            var elements = document.querySelectorAll("p, h1, h2, a, label");  // Target all elements in the body
+
+            // If there's a search term, highlight exact matches in the targeted elements
+            if (searchTerm.length > 0) {
+                matchedElements = [];  // Reset the matched elements array
+
+                // Reset highlights before searching again
+                elements.forEach(function (element) {
+                    var originalText = element.textContent;  // Get the original text content
+                    var regex = new RegExp(`\\b(${searchTerm})\\b`, 'gi');  // Use word boundaries to match exact word
+
+                    // Only update the element if the search term matches the content
+                    if (regex.test(originalText)) {
+                        element.innerHTML = originalText.replace(regex, function (match) {
+                            return `<span class="highlight">${match}</span>`;  // Wrap the matched text in <span> with the highlight class
+                        });
+                        matchedElements.push(element);  // Store matched elements
+                    }
+                });
+
+                // If there are matches, scroll to the first match
+                if (matchedElements.length > 0) {
+                    currentMatchIndex = 0;  // Start from the first match
+                    matchedElements[currentMatchIndex].scrollIntoView({
+                        behavior: 'smooth',  // Smooth scroll
+                        block: 'center'      // Scroll to the center of the screen
+                    });
+                }
+            }
+        }
+    });
+
+    // Detect input change to remove highlights when the search bar is cleared
+    searchBar.addEventListener("input", function () {
+        var searchTerm = this.value.trim().toLowerCase();  // Get the search term and make it lowercase
+        var elements = document.querySelectorAll("p, h1, h2, a, label");  // Target all elements in the body
+
+        // If the search term is empty, remove the highlight only from the text content
+        if (searchTerm.length === 0) {
+            elements.forEach(function (element) {
+                var originalText = element.innerHTML;  // Get the original HTML content
+                // Restore the original HTML content without affecting other elements (like <img>)
+                element.innerHTML = originalText.replace(/<span class="highlight">([^<]*)<\/span>/gi, '$1');
+            });
+            currentMatchIndex = -1;  // Reset the match index when clearing the search bar
+            matchedElements = [];  // Reset the matched elements array
+        }
+    });
+
+    // Function to scroll to the next match when user hits Enter again
+    searchBar.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" && event.ctrlKey) {  // Scroll to next match when Ctrl + Enter is pressed
+            var searchTerm = this.value.trim().toLowerCase();  // Get the search term
+            var elements = document.querySelectorAll("p, h1, h2, a, label");
+            let allMatchedElements = [];
+
+            // Find all elements that match the search term
+            elements.forEach(function (element) {
+                var originalText = element.textContent;
+                var regex = new RegExp(`\\b(${searchTerm})\\b`, 'gi');
+                if (regex.test(originalText)) {
+                    allMatchedElements.push(element);
+                }
+            });
+
+            if (allMatchedElements.length > 0) {
+                currentMatchIndex = (currentMatchIndex + 1) % allMatchedElements.length;  // Move to the next match
+                allMatchedElements[currentMatchIndex].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+    });
+
+    // Terms and conditions popup
+    var popup = document.getElementById("termsAndConditionsPopup");
+    var btn = document.getElementById("termsClickable");
+    var span = document.querySelector(".close-btn");
+
+    if (btn) {
+        btn.onclick = function () {
+            popup.style.display = "block";
+        }
+    }
+
+    if (span) {
+        span.onclick = function () {
+            popup.style.display = "none";
+        }
+    }
+
+    window.onclick = function (event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+
+    // Developer popup
+    var devPopup = document.getElementById("devPopup");
+    var devBtn = document.getElementById("dev-btns");
+
+    if (devBtn) {
+        devBtn.onclick = function () {
+            devPopup.style.display = "block";
+        }
+    }
+
+    // How-to cards functionality
+    var howToCards = document.querySelectorAll(".how-to-card");
+    howToCards.forEach(function (card) {
+        card.onclick = function () {
+            var targetId = this.id + "Popup";  // Append "Popup" to the card's id
+            var targetPopup = document.getElementById(targetId); // Find the corresponding popup
+
+            if (targetPopup) {
+                targetPopup.style.display = "block";
+            }
+        }
+    });
+
+    // Close buttons for how-to-card popups
+    var closeButtons = document.querySelectorAll(".popup .close-btn");
+    closeButtons.forEach(function (button) {
+        button.onclick = function () {
+            this.closest(".popup").style.display = "none";
+        }
+    });
+});
+</script>

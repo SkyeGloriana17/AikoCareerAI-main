@@ -1,0 +1,105 @@
+@model List<CareerAI.Models.ChatHistory>
+
+@{
+    var userId = Context.Session.GetString("UserId");
+    var selectedChatHistoryId = ViewBag.SelectedChatHistoryId as string;
+    var sortedChatHistories = Model?.OrderByDescending(ch => ch.UpdatedDate).ToList() ?? new
+    List<CareerAI.Models.ChatHistory>();
+
+    string Truncate(string value, int maxLength)
+    {
+        if (string.IsNullOrEmpty(value)) return value;
+        return value.Length <= maxLength ? value : value.Substring(0, maxLength) + "...";
+    }
+
+    string GetDescription(string description)
+    {
+        if (string.IsNullOrEmpty(description))
+        {
+            return "Start a new conversation to see it here.";
+        }
+        return Truncate(description, 25);
+    }
+}
+
+<div class="chat-side">
+    <div class="account-info">
+        <div class="account-icon">
+            <img src="/assets/Homepage/user-icon.svg">
+        </div>
+        <div>
+            @if (userId != null)
+            {
+                <h1>@Context.Session.GetString("UserName")</h1>
+                <p>You'll find your career today</p>
+            }
+            else
+            {
+                <h1>Guest</h1>
+                <p>Welcome! Please log in to save your chat history.</p>
+            }
+        </div>
+    </div>
+
+    <h1 class="history-title">
+        Latest Chats
+    </h1>
+
+    @if (userId != null && sortedChatHistories.Any())
+    {
+        <div class="recent-chat @(sortedChatHistories.First().Id == selectedChatHistoryId ? "active" : "")"
+            data-chat-id="@sortedChatHistories.First().Id" onclick="navigateToChat(this)">
+            <button class="recent">
+                Recent
+            </button>
+            <div class="chat-image">
+                <img src="/assets/Homepage/latest-chats.svg">
+            </div>
+            <div class="main-recent-chat">
+                <h2 class="chat-title">@Truncate(sortedChatHistories.First().Title, 15)</h2>
+                <p class="chat-message">
+                    @GetDescription(sortedChatHistories.First().Messages.LastOrDefault()?.Parts.FirstOrDefault()?.Text)</p>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            @foreach (var chatHistory in sortedChatHistories.Skip(1))
+            {
+                <div class="chat-box @(chatHistory.Id == selectedChatHistoryId ? "active" : "")" data-chat-id="@chatHistory.Id"
+                    onclick="navigateToChat(this)">
+                    <div class="date-chat">
+                        <h1>@chatHistory.UpdatedDate.ToString("MM-dd-yyyy")</h1>
+                    </div>
+                    <div class="main-chat">
+                        <h2 class="chat-title">@Truncate(chatHistory.Title, 15)</h2>
+                        <p class="chat-message">
+                            @GetDescription(chatHistory.Messages.LastOrDefault()?.Parts.FirstOrDefault()?.Text)</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="recent-chat">
+            <button class="recent">
+                Recent
+            </button>
+            <div class="chat-image">
+                <img src="/assets/Homepage/latest-chats.svg">
+            </div>
+            <div class="main-recent-chat">
+                <h2 class="chat-title">No Recent Chats</h2>
+                <p class="chat-message">Start a new conversation to see it here.</p>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    function navigateToChat(element)
+    {
+        var chatHistoryId = element.getAttribute('data-chat-id');
+        window.location.href = '/Chat/Index?chatHistoryId=' + chatHistoryId;
+    }
+</script>

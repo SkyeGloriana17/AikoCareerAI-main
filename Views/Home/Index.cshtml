@@ -1,0 +1,542 @@
+﻿@{
+    Layout = "_Sidebar";
+    ViewData["Title"] = "Homepage";
+    ViewData["ShowRightSidebar"] = "true";
+    ViewData["RightSidebar"] = "ChatHistory";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Homepage.css" />
+}
+
+<div class="main-top">
+    <button class="dev-btn" id="dev-btns"> <img src="/assets/Homepage/dev-icon.svg"></button>
+    <div class="search-bar">
+            <input type="text" name="q" id="searchBar" placeholder="Search anything" class="search-box">
+            <img src="/assets/Homepage/search-icon.svg" alt="Search">
+    </div>
+</div>
+<div class="terms">
+    <div id="termsClickable" class="clickable">
+        <img src="/assets/Homepage/terms-icon.svg">
+        <button class="term"> Terms and Conditions </button>
+    </div>
+    <div class="clickable">
+        <img src="/assets/Homepage/sample-resume-icon.svg">
+        <button class="term"> Sample Built Resume </button>
+    </div>
+</div>
+
+<div class="title">
+    <h1> How to Use? </h1>
+    <img src="/assets/Homepage/how-to-icon.svg">
+</div>
+
+    <div class="how-to-container">
+        <div id="howToCard1" class="how-to-card">
+            <button class="arrow-how">
+                <img src="/assets/Homepage/arrow.svg">
+            </button>
+            <div class="how-to-image">
+                <img class="how-to-1" src="/assets/Homepage/how-to-one.svg">
+            </div>
+            <hr>
+            <div id="howToCard2" class="main-how-to">
+                <h2 class="how-to-title">How to use Career AI</h2>
+                <p class="how-to-message"> Find your career with Aikareer </p>
+            </div>
+        </div>
+
+        <div id="howToCard2" class="how-to-card">
+            <button class="arrow-how">
+                <img src="/assets/Homepage/arrow.svg">
+            </button>
+            <div class="how-to-image">
+                <img class="how-to-2" src="/assets/Homepage/how-to-two.svg">
+            </div>
+            <hr>
+            <div class="main-how-to">
+                <h2 class="how-to-title">How to use Aiko Chatbot</h2>
+                <p class="how-to-message">Aiko guides your career</p>
+            </div>
+        </div>
+
+        <div id="howToCard3" class="how-to-card">
+            <button class="arrow-how">
+                <img src="/assets/Homepage/arrow.svg">
+            </button>
+            <div class="how-to-image">
+                <img class="how-to-3" src="/assets/Homepage/how-to-three.svg">
+            </div>
+            <hr>
+            <div class="main-how-to">
+                <h2 class="how-to-title">How to build a resume</h2>
+                <p class="how-to-message"> Build your resume easily </p>
+            </div>
+        </div>
+    </div>
+
+<div class="title">
+    <h1> Assessment Shortcut </h1>
+    <img src="/assets/Homepage/shortcuts-icon.svg">
+</div>
+
+    <div class="shortcut-container">
+            <div class="first-shortcut">
+                <button class="arrow-shortcut">
+                    <img src="/assets/Homepage/arrow.svg">
+                </button>
+                <div class="shortcut-image">
+                    <a href="/Assessment/Assessment.cshtml"><img class="shortcut-image1" src="/assets/Homepage/shortcut-1.svg"></a>
+                </div>
+                <hr>
+                <div class="main-shortcut">
+                    <h2 class="shortcut-title">Demographic Profile</h2>
+                    <p class="shortcut-message">  Let's get to know you better. </p>
+                </div>
+            </div>
+        <div class="second-shortcut">
+            <button class="arrow-shortcut2">
+                <img src="/assets/Homepage/arrow.svg">
+            </button>
+            <div class="shortcut-image">
+                 <a href="/Assessment/Assessment.cshtml"><img class="shortcut-image2" src="/assets/Homepage/shortcut-2.svg"></a>
+            </div>
+            <hr>
+            <div class="main-shortcut2">
+                <h2 class="shortcut-title">Personality, Values, Beliefs and Ideas</h2>
+                <p class="shortcut-message">Discover your best career path based on your traits. </p>
+            </div>
+        </div>
+    </div>
+
+<div class="title">
+    <h1> Ask Aiko Chatbot </h1>
+    <img src="/assets/Homepage/chat-icon.svg">
+</div>
+
+<div class="chat-suggestion-container">
+    <div class="chat-suggestion">
+        <div class="arrow">
+            <button><img src="/assets/Homepage/arrow.svg"></button>
+        </div>
+        <div class="suggest">
+            <a href="/Chatbot" class="chat-suggestion-btn"> How can I start exploring career options? </a>
+        </div>
+    </div>
+    <div class="chat-suggestion">
+        <div class="arrow">
+            <button><img src="/assets/Homepage/arrow.svg"></button>
+        </div>
+        <div class="suggest">
+            <a href="/Chatbot" class="chat-suggestion-btn"> How do I find careers that match my strengths? </a>
+        </div>
+    </div>
+    <div class="chat-suggestion">
+        <div class="arrow">
+            <button><img src="/assets/Homepage/arrow.svg"></button>
+        </div>
+        <div class="suggest">
+            <a href="/Chatbot" class="chat-suggestion-btn"> What should I consider when choosing a career path?</a>
+        </div>
+    </div>
+</div>
+
+<!-- Popup Dev -->
+<div id="devPopup" class="popup" style="display: none;">
+    <div class="popup-content" id="devPopup-content">
+        <div class="top-popup">
+            <div class="title-popup">
+                <img src="/assets/Homepage/dev-icon-popup.svg">
+                <div>
+                    <h1> Developers of Website </h1>
+                    <h2> Developed December 1, 2024 </h2>
+                </div>
+            </div>
+            <img src=" /assets/Homepage/close-btn.svg" class="close-btn">
+        </div>
+        <div class="main-popup" id="main-popup-dev">
+           <img src=" /assets/Homepage/joey-dev.svg">
+           <img src=" /assets/Homepage/skye-dev.svg">
+           <img src=" /assets/Homepage/trish-dev.svg">
+           <img src=" /assets/Homepage/sanji-dev.svg">
+        </div>
+    </div>
+</div>
+
+<!-- Popup HTML -->
+<div id="termsAndConditionsPopup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <div class="top-popup">
+            <div class="title-popup">
+                <img src="/assets/Homepage/terms-popup.svg">
+                <div>
+                    <h1> Terms and Condition </h1>
+                    <h2> Last updated September 16,2024 </h2>
+                </div>
+            </div>
+            <img src="/assets/Homepage/close-btn.svg" class="close-btn">
+        </div>
+        <div class="main-popup">
+            <div class="scrollable-popup">
+                <div class="introduction">
+                    <h1> Introduction </h1>
+                    <img src="/assets/Homepage/introduction-popup.svg">
+                </div>
+                <p class="introduction-texts"> By accessing or using our website (the “Service”), you agree to comply
+                    and be bound by the following terms and conditions (the “Terms”). Please read the Terms carefully
+                    before using our Service.</p>
+                <div class="popup-content-text">
+                    <h1>1. Acceptance of Terms </h1>
+                    <p>By using Aikareer, you agree to comply with these Terms and by extension, our Privacy Policy. If
+                        you disagree with any part of these Terms, do not use our Service. </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>2. Service Description </h1>
+                    <p>Aikareer's mission is to help you explore potential career paths based on your responses to
+                        questions. Utilizing Artificial Intelligence (AI), the [name of website] website can generate
+                        career recommendations based on the information you input into the website. </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>3. User Obligation </h1>
+                    <p><b>Accuracy:</b> Provide accurate and complete information when responding to questions.<br>
+                        <b>Feedback:</b> Report any issues or errors in detail to improve your experience.<br>
+                        <b>Privacy:</b> Avoid sharing unnecessary personal information with the AI Chatbot.<br>
+                        <b>Responsible Use:</b> Do not share offensive or illegal content, misuse the AI for unethical
+                        purposes, or attempt to breach its security.
+                    </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>4. Intellectual Property </h1>
+                    <p>All content found on Aikareer is owned by Aikareer or its licensors and is protected by
+                        intellectual property laws. </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>5. User Obligation </h1>
+                    <p> The career recommendations provided by Aikareer are for solely informational purposes and should
+                        not be considered professional advice. We can not guarantee the accuracy nor the suitability of
+                        the recommendations. </p>
+                </div>
+            </div>
+
+            <div class="button-popup">
+                <button class="decline-btn">
+                    Decline
+                </button>
+                <button class="accept-btn">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup for How to use Career AI -->
+<div id="howToCard1Popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <div class="top-popup">
+            <div class="title-popup">
+                <img src="/assets/Homepage/information-popup.svg">
+                <div>
+                    <h1> How to Use Career AI </h1>
+                    <h2> Last updated September 16,2024 </h2>
+                </div>
+            </div>
+            <img src="/assets/Homepage/close-btn.svg" class="close-btn">
+        </div>
+        <div class="main-popup">
+            <div class="scrollable-popup">
+                <div class="introduction">
+                    <h1> General Information </h1>
+                </div>
+                <p class="introduction-texts"> Welcome to Aikareer Assessment. The Assessment is a quiz that would
+                    assess which career would suit you based on your demographic profile and the answers you chose on
+                    each question. </p>
+                <div class="popup-content-text">
+                    <h1>What to Expect in the Assessment? </h1>
+                    <p>The assessment is organized into five main categories to get a well-rounded picture of
+                        you:<br><br>
+                        1. <b>Demographic Profile:</b> We’ll start with some questions to understand your background as
+                        a job seeker.<br>
+                        2. <b>Interests:</b> Next, we explore what excites you—your hobbies and passions.<br>
+                        3. <b>Skills:</b> Then, we look at the strengths and abilities you bring to the table.<br>
+                        4. <b>Personality:</b> This section covers how you typically behave in a work environment.<br>
+                        5. <b>Values:</b> Finally, we ask about the principles that drive you and what motivates you.
+                    </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>How to answer questions in the Assessment? </h1>
+                    <p>Each question offers four choices. Take a moment to read carefully and pick the option that feels
+                        closest to your true self. This will help us match you with the best career results.</p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>Not Quite Happy with the Results? </h1>
+                    <p>No problem - Try our Skill Gap Analysis! The Skill Gap Analysis tool lets you check how your
+                        skills measure up to the demands of your ideal career, helping you identify areas for
+                        growth.<br><br>
+                        <b>Remember:</b> Choose your answers carefully based on how accurately it portrays you in order
+                        to get the most accurate results for your career assessment. <br><br>
+                        So, take a deep breath, answer honestly, and let’s uncover your next career step. Good luck!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup for How to use Aiko Chatbot -->
+<div id="howToCard2Popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <div class="top-popup">
+            <div class="title-popup">
+                <img src="/assets/Homepage/information-popup.svg">
+                <div>
+                    <h1> How to Use AIKO Chatbot: </h1>
+                    <h2> Last updated September 16,2024 </h2>
+                </div>
+            </div>
+            <img src="/assets/Homepage/close-btn.svg" class="close-btn">
+        </div>
+        <div class="main-popup">
+            <div class="scrollable-popup">
+                <div class="introduction">
+                    <h1> Disclaimer: </h1>
+                </div>
+                <p class="introduction-texts"> The following disclaimer is intended to inform users of the limitations
+                    and usage guidelines of the Artificial Intelligence (AI) AIKO chatbot. Please read this disclaimer
+                    carefully before engaging with the chatbot.<br><br>
+                    AIKO chatbot provides automated responses generated by machine-learning algorithms. While it is
+                    trained to provide accurate and relevant information, the accuracy, relevancy, or completeness of
+                    the responses is not guaranteed.
+                </p>
+                <div class="popup-content-text">
+                    <h1>How can I start chatting with AIKO? </h1>
+                    <p>To start chatting with AIKO, you can choose one of the predetermined questions generated by the
+                        bot to start a chat. Or if you already have a question of your own, you can type it into the
+                        chat to ask AIKO chatbot. </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>How can I create a New Chat with AIKO? </h1>
+                    <p>If you ever felt the need to start a new chat or ask AIKO a new question unrelated to your
+                        previous chat, click on the top button in the right sidebar to start a new chat. Once you do, it
+                        will generate a new chat and you can now start chatting again with AIKO.</p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>Can I Review Previous Chats with AIKO? </h1>
+                    <p>You can save and review previous chats you made with AIKO by clicking on the right sidebar and
+                        clicking on one of the previous chats you wish to access. <br><br>
+                        With all of these tips in mind, you can start interacting with AIKO chatbot.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup for How to build a resume -->
+<div id="howToCard3Popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <div class="top-popup">
+            <div class="title-popup">
+                <img src="/assets/Homepage/information-popup.svg">
+                <div>
+                    <h1> How to use Resume Builder </h1>
+                    <h2> Last updated September 16,2024 </h2>
+                </div>
+            </div>
+            <img src=" /assets/Homepage/close-btn.svg" class="close-btn">
+        </div>
+        <div class="main-popup">
+            <div class="scrollable-popup">
+                <div class="introduction">
+                    <h1> General Information: </h1>
+                </div>
+                <p class="introduction-texts"> Welcome to Aikareer Resume Builder. Our tool makes it easy for you to
+                    create a professional resume with a single formal template—just fill in the details and you're ready
+                    to go. Here’s how to get started:</p>
+                <div class="popup-content-text">
+                    <h1>Begin Building Your Resume </h1>
+                    <p>Our template comes pre-designed, so you can focus on what matters: sharing your unique skills and
+                        experience. Here’s what you’ll need to fill out: <br><br>
+                        1. <b>Personal Details</b>: Add your name, email, phone number, and address. <br><br>
+                        2. <b>Professional Summary</b>: Capture who you are as a job candidate in 2-3 sentences. Make
+                        sure to highlight your key skills, experience, and goals. <br><br>
+                        3. <b>Education</b>: List your degree(s), school names, and graduation dates. Add any relevant
+                        courses or honors if they align with your job goals. <br><br>
+                        4. <b>Experience</b>: Outline your previous job title(s), company names, employment dates, and
+                        job responsibilities. Feel free to mention key achievements from each role. <br><br>
+                        5. <b>Skills</b>: Showcase your technical strengths with quick bullet points like “Project
+                        Management” or “Problem-Solving.”
+                    </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>Saving and Printing Your Resume </h1>
+                    <p>Once everything's filled out, click “Build and Print” to download your resume instantly as PDF.
+                    </p>
+                </div>
+                <div class="popup-content-text">
+                    <h1>Reminder </h1>
+                    <p>Be sure your details are accurate and honest.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+        // Get the terms and conditions popup
+        var popup = document.getElementById("termsAndConditionsPopup");
+
+        // Get the button that opens the terms popup
+        var btn = document.getElementById("termsClickable");
+
+        // Get the <span> element that closes the terms popup
+        var span = document.querySelector(".close-btn");
+
+        // When the user clicks the terms button, open the popup
+        btn.onclick = function ()
+        {
+            popup.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the popup
+        span.onclick = function ()
+        {
+            popup.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the popup, close it
+        window.onclick = function (event)
+        {
+            if (event.target == popup)
+            {
+                popup.style.display = "none";
+            }
+        }
+
+        // Get the dev popup
+        var devPopup = document.getElementById("devPopup");
+
+        // Get the button that opens the dev popup
+        var devBtn = document.getElementById("dev-btns");
+
+        // When the user clicks the dev button, open the popup
+        devBtn.onclick = function ()
+        {
+            devPopup.style.display = "block";
+        }
+
+        // Modify this part for how-to-cards to open specific divs based on the id
+        var howToCards = document.querySelectorAll(".how-to-card");
+        howToCards.forEach(function (card)
+        {
+            card.onclick = function ()
+            {
+                var targetId = this.id + "Popup"; // Append "Popup" to the card's id
+                var targetPopup = document.getElementById(targetId); // Find the corresponding popup
+
+                // Show the corresponding popup if it exists
+                if (targetPopup)
+                {
+                    targetPopup.style.display = "block";
+                }
+            }
+        });
+
+        // Close buttons for how-to-card popups
+        var closeButtons = document.querySelectorAll(".popup .close-btn");
+        closeButtons.forEach(function (button)
+        {
+            button.onclick = function ()
+            {
+                this.closest(".popup").style.display = "none";
+            }
+        });
+    });
+
+
+    const searchBar = document.getElementById("searchBar");
+
+    let currentMatchIndex = -1; // Keeps track of the current match
+
+    searchBar.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {  // Only trigger when Enter is pressed
+            var searchTerm = this.value.trim().toLowerCase(); // Get the search term and make it lowercase
+            var elements = document.querySelectorAll(".main-container p, .main-container h1, .main-container h2, .main-container a"); // Target only elements within the .main-container
+
+            // If there's a search term, highlight exact matches in the targeted elements
+            if (searchTerm.length > 0) {
+                let matchedElements = []; // Store all the matched elements
+
+                // Reset highlights before searching again
+                elements.forEach(function(element) {
+                    var originalText = element.textContent; // Get the original text content
+                    var regex = new RegExp(`\\b(${searchTerm})\\b`, 'gi'); // Use word boundaries to match exact word
+
+                    // Only update the element if the search term matches the content
+                    if (regex.test(originalText)) {
+                        element.innerHTML = originalText.replace(regex, function(match) {
+                            return `<span class="highlight">${match}</span>`; // Wrap the matched text in <span> with the highlight class
+                        });
+                        matchedElements.push(element); // Store matched elements
+                    }
+                });
+
+                // If there are matches, scroll to the first match
+                if (matchedElements.length > 0) {
+                    currentMatchIndex = 0; // Start from the first match
+                    matchedElements[currentMatchIndex].scrollIntoView({
+                        behavior: 'smooth',  // Smooth scroll
+                        block: 'center'      // Scroll to the center of the screen
+                    });
+                }
+            }
+        }
+    });
+
+    // Detect input change to remove highlights when the search bar is cleared
+    searchBar.addEventListener("input", function() {
+        var searchTerm = this.value.trim().toLowerCase(); // Get the search term and make it lowercase
+        var elements = document.querySelectorAll(".main-container p, .main-container h1, .main-container h2, .main-container a"); // Target only elements within the .main-container
+
+        // If the search term is empty, remove the highlight only from the text content
+        if (searchTerm.length === 0) {
+            elements.forEach(function(element) {
+                var originalText = element.innerHTML; // Get the original HTML content
+                // Restore the original HTML content without affecting other elements (like <img>)
+                element.innerHTML = originalText.replace(/<span class="highlight">([^<]*)<\/span>/gi, '$1');
+            });
+            currentMatchIndex = -1; // Reset the match index when clearing the search bar
+        }
+    });
+
+    // Function to scroll to the next match when user hits Enter again
+    searchBar.addEventListener("keydown", function(event) {
+        if (event.key === "Enter" && event.ctrlKey) {  // Scroll to next match when Ctrl + Enter is pressed
+            var searchTerm = this.value.trim().toLowerCase(); // Get the search term
+            var elements = document.querySelectorAll(".main-container p, .main-container h1, .main-container h2, .main-container a");
+            let matchedElements = [];
+
+            // Find all elements that match the search term
+            elements.forEach(function(element) {
+                var originalText = element.textContent;
+                var regex = new RegExp(`\\b(${searchTerm})\\b`, 'gi');
+                if (regex.test(originalText)) {
+                    matchedElements.push(element);
+                }
+            });
+
+            if (matchedElements.length > 0) {
+                currentMatchIndex = (currentMatchIndex + 1) % matchedElements.length; // Move to the next match
+                matchedElements[currentMatchIndex].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        }
+    });
+</script>

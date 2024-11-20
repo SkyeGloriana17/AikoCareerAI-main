@@ -1,0 +1,106 @@
+/* Styles for success popups */
+.popup-success {
+    border: 3px solid #89C2A0;
+    border-radius: 10px;
+    background-color: #E8F9F1;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Container for the message inside the popup */
+.message-popup {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: 10px 20px 10px 30px;
+}
+
+/* Styles for the image inside the message popup */
+.message-popup img {
+    margin-right: 15px;
+}
+
+/* Styles for the success message text */
+.message-success {
+    font-family: 'Montserrat';
+}
+
+/* Styles for the success message heading */
+.message-success h1 {
+    font-size: 1.3rem;
+    color: #58B079;
+    font-weight: 600;
+}
+
+/* Styles for the success message paragraph */
+.message-success p {
+    color: #095225;
+    opacity: .5;
+}
+
+/* Container for the close button in success popups */
+.close-popup-success {
+    border-left: 1px solid #80BD9B;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+/* Styles for the close button in success popups */
+.close-button-success {
+    background-color: #E8F9F1;
+    border: none;
+    font-size: .8rem;
+    font-family: 'Montserrat';
+    color: #1A964C;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* Styles for error popups */
+.popup-error {
+    border: 3px solid #D47F93;
+    border-radius: 10px;
+    background-color: #FBEDEF;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Styles for the error message text */
+.message-error {
+    font-family: 'Montserrat';
+}
+
+/* Styles for the error message heading */
+.message-error h1 {
+    font-size: 1.3rem;
+    color: #C37876;
+    font-weight: 600;
+}
+
+/* Styles for the error message paragraph */
+.message-error p {
+    color: #D69E9E;
+    opacity: .8;
+}
+
+/* Container for the close button in error popups */
+.close-popup-error {
+    border-left: 1px solid #D47F93;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+/* Styles for the close button in error popups */
+.close-button-error {
+    background-color: #FBEDEF;
+    border: none;
+    font-size: .8rem;
+    font-family: 'Montserrat';
+    color: #D47F93;
+    font-weight: 400;
+    cursor: pointer;
+}

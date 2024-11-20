@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+:root {
+    --blue: #8EABE1;
+    --orange: #E05723;
+    --peach: #fcf4e7;
+    --dark-green: #696935;
+    --yellow: #FFD661;
+    --brown: #F3B426;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+}
+
+
+.container{
+    display: flex;
+}
+
+.left-sidebar {
+    width: 20%;
+    background-color: white;
+    padding: 3.5% 3%;
+}
+
+.main-container {
+    width: 56.5%;
+    padding: 3.5% 3%;
+    background-color: #FCF4E7;
+    border-left:1px solid #5C5C5C;  
+}
+
+.right-sidebar {
+    background-color: #E3EEFF;
+    width:23.5%;
+    border-left:1px solid #5C5C5C;
+    padding:3.5% 0% 3.5% 1.7%;
+    position:relative;
+    transition: transform 0.3s ease; 
+}
+
+
+/* Left-Sidebar */
+.nav-bar {
+    position:fixed;
+    top: 6%;
+}
+
+.logo-top {
+    display: flex;
+    align-items:center;
+}
+
+.logo-top img {
+    width:22%;
+    margin-right: 5%;
+}
+
+.logo-title {
+    color: #202C4D;
+}
+
+.logo-title h2 {
+    font-family:'Montserrat';
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.logo-title h1 {
+    font-family: 'Ultra';
+    font-weight: 500;
+    font-size: 1.55rem;
+}
+
+.navs {
+    margin: 12% 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    height: 77vh;
+}
+
+.nav {
+    display: flex;
+    align-items:center;
+    margin: 10% 0;
+}
+
+#logout {
+    margin: 10% 0 0 0;
+}
+
+.nav.active {
+    margin-left: -10px;
+    background-color: #D8E6FF;
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: 2px solid #545454;
+}
+
+.nav img {
+    width: 12%;
+    margin-right: 16px;
+}
+
+.nav a {
+    font-family:'Ultra';
+    text-decoration: none;
+    font-size: 1.15rem;
+    color:#202C4D;
+    font-weight: 500;
+}
+
+.nav-extend {
+    margin-left: 10%;
+}
+
+.sub-nav {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat';
+    margin: 6% 0;
+    opacity: .9;
+    transition: padding .5s ease;
+}
+
+.sub-nav:hover {
+    background-color:#D8E6FF;
+    border-radius: 20px;
+    padding: 4px 0;
+}
+
+.sub-nav img {
+    margin-right: 5%;
+}
+.sub-nav a{
+    color: #202C4D;
+    font-weight: 600; 
+    font-size: .9rem;
+}
+
+
+.sign-up-box{
+    margin-top: 10%;
+    width: 85%;
+    height: 220px;
+    background-color: #FCF4E7;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    box-shadow: 8px 8px 2px 0px rgba(1,1,1,1);
+}
+
+.sign-up-image {
+    height: 90px;
+    position:relative;
+}
+
+.signup-image {
+    width: 90%;
+    position: absolute;
+    top: -2px;
+    right: 0px;
+}
+
+.signup-title {
+   padding: 3% 5% 3% 10%;
+}
+
+.signup-title h1 {
+    color: #202C4D;
+    font-size:1.2rem;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.signup button {
+    padding: 3% 9%;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-family:'Ultra';
+    color: #202C4D;
+    font-size: 1.05rem;
+    cursor:pointer;
+
+}
+
+.signup button:hover {
+    color: white;
+    background-color: #202C4D;
+    font-weight: 100;
+}
+
+
+
+/* Right-Sidebar */
+.chat-side {
+    position:fixed;
+    width:20%;
+    height: 89vh;
+    overflow: hidden;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14%;
+}
+
+.account-icon {
+    padding: 2.5% 1% 2.5% 4%;
+    border-radius: 100px;
+    border: 2px solid #000000;
+    background-color: #FFD662;
+    margin-right: 15px;
+    min-width: 18%;
+}
+
+.account-icon img {
+    width: 70%;
+    text-align: center;
+}
+
+.account-info h1 {
+    font-family: 'Ultra';
+    font-weight: 500;
+    font-size: 1.15rem;
+    color: #202C4D;
+    margin: 0 0 1% 0;
+}
+
+.account-info p {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: .9rem;
+    color: #202C4D;
+}
+
+.history-title {
+    font-family: 'Ultra';
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #202C4D;
+}
+
+.recent-chat {
+    margin:6% 0 6% 0;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    position: relative;
+}
+
+.recent {
+    font-family:'Montserrat';
+    background-color: #FDC0D2;
+    border: 2px solid #2F2F2F;
+    border-radius: 30px;
+    margin: 5% 6%;
+    padding: 1% 6%;
+    color: #202C4D;
+    font-size:.8rem;
+    font-weight: 600;
+    position:relative;
+    z-index:99999;
+}
+
+.chat-image {
+    height: 60px;
+}
+
+.chat-image img{
+    width: 80%;
+    position: absolute;
+    top: 0;
+    z-index:0;
+}
+
+
+
+.main-recent-chat {
+    background-color:#d9e7fb;
+    border-top: 2px solid #2F2F2F;
+    border-radius: 28px;
+    padding: 3% 8%;
+    position:relative;
+    z-index:99999;
+}
+
+
+.chat-title {
+    font-family: 'Montserrat';
+    font-size: 1.02rem;
+    color: #202C4D;
+    margin-bottom:3%;
+}
+
+.chat-message {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: .7rem;
+    color: #202C4D;
+}
+
+.chat-container {
+    overflow-y: scroll;
+    padding-right: 10px;
+    height: 43vh;
+    margin-top: auto;
+}
+
+.chat-container::-webkit-scrollbar {
+    width:12px;
+    height:12px;
+
+}
+
+.chat-box {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: white;
+    padding: 5%;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 6% 0 6% 0;
+    transition: padding .5s ease;
+}
+
+.chat-box:hover {
+    padding: 8% 5%;
+    border: 3px solid #252E49;
+    cursor:pointer;
+}
+
+.date-chat {
+    width: 155px;
+    padding: 5%;
+    background-color: #81A8E3;
+    border: 2px solid #2F2F2F;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.date-chat h1 {
+    font-family:'Montserrat';
+    font-size: 1.05rem;
+    color: white;
+}
+
+.main-container.chatbot {
+    width: 63%;
+    transition: width 0.3s ease; /* Smooth transition */
+    height: 100vh;
+}
+
+.right-sidebar.chatbot {
+    width: 17%;
+    transition: width 0.3s ease, padding 0.3s ease;
+    height: 100vh;
+}
+
+
+.right-sidebar.minimized {
+    width: 5%;
+    padding:0;
+    margin:0;
+    position:relative;
+}
+
+.main-container.minimized {
+    width: 75%;
+}
+
+
+.burger {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #252E49;
+    border-radius: 90px;
+}
+
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+
+.add-chat-btn {
+    display: flex;
+    align-items:center;
+    border:2px solid black;
+    border-radius: 20px;
+    padding: 4% 0 4% 8%;
+    width: 90%;
+    background-color: #D8E6FF;
+    transition: transform .5s ease;
+    cursor:pointer;
+}
+
+.add-chat-btn:hover {
+    transform: scale(1.05);
+}
+
+.add-chat-btn img {
+    margin-right: 15px;
+}
+
+.add-chat-btn span {
+    font-family: 'Montserrat';
+    font-size: .9rem;
+    color :#202C4D;
+    font-weight: 600;
+}
+
+
+.sidebar-section h1 {
+    font-family:'Ultra';
+    color: #202C4D;
+    font-weight: 400;
+}
+
+.sidebar-section h2 {
+    margin-top: 30px;
+    font-family: 'Montserrat';
+    color: #202C4D;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.sidebar-section-container {
+    height: 50vh;
+    overflow-y:scroll;
+    margin-right: 10%;
+}
+
+.history-chats {
+    display: flex;
+    align-items: center;
+    margin: 5% 0 10% 5%;
+    cursor:pointer;
+}
+
+.history-chats img {
+    width: 10%;
+    margin-right: 15px;
+}
+
+.history-chats p {
+    font-family: 'Montserrat';
+    color: #202C4D;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.history-chats.active {
+    margin-left:0;
+    width: 95%;
+    padding: 4% 3% 4% 10%;
+    background-color: #D8E6FF; 
+    border-radius: 20px; 
+    border: 2px solid #5C5C5C; 
+}
+
+.history-chats:hover {
+    margin-left:0;
+    width: 95%;
+    padding: 4% 3% 4% 10%;
+    background-color: #D8E6FF; 
+    border-radius: 20px; 
+    border: 2px solid #5C5C5C; 
+}
+
+
+.clear-chat-history {
+    display: flex;
+    background:none;
+    position: absolute;
+    bottom: 50px;
+    border: none;
+}
+
+.clear-chat-history img {
+    display: flex;
+    background:none;
+    margin-right: 10px;
+}
+
+.clear-chat-history p {
+    font-family: 'Montserrat';
+    color: #202C4D;
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+.show-content {
+    display: block;
+}
+
+.hide-content h1,
+.hide-content h2,
+.hide-content .add-chat-btn span,
+.hide-content .history-chats p,
+.hide-content .history-chats img,
+.hide-content .clear-chat-history p,
+.hide-content .sidebar-section-container  {
+    display: none;
+}
+
+.hide-content .add-chat-btn {
+   width:auto;
+   height: 100px;
+   position: absolute;
+   top: 120px;
+   right: 20px;
+   justify-content: center;
+}
+
+.hide-content .add-chat-btn img {
+    margin: 0 5px 0 0 ;
+ }
+
+ .hide-content .clear-chat-history {
+    padding: 10%;
+    border: 2px solid #202C4D;
+    border-radius: 20px;
+    right: 20px;
+    position: absolute;
+ }
+
+ .hide-content .clear-chat-history img {
+    margin:0;
+ }
+
+.main-container.full-width {
+    width: 80%;
+    background-image: url('/assets/ForgotPass/cat-bg.svg'); 
+    background-size: cover; 
+    background-position: center; 
+}

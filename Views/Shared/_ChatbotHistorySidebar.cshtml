@@ -1,0 +1,205 @@
+@model List<CareerAI.Models.ChatHistory>
+
+@{
+    var userId = Context.Session.GetString("UserId");
+    var selectedChatHistoryId = ViewBag.SelectedChatHistoryId as string;
+    var sortedChatHistories = Model.OrderByDescending(ch => ch.UpdatedDate).ToList();
+    var mostRecentChatHistory = sortedChatHistories.FirstOrDefault();
+    var activeChatHistoryId = !string.IsNullOrEmpty(selectedChatHistoryId) ? selectedChatHistoryId :
+    mostRecentChatHistory?.Id;
+}
+
+<span class="burger material-symbols-outlined" onclick="toggleSidebar()">menu_open</span>
+<div class="sidebar-content">
+    <div class="sidebar-section">
+        <h1>Chats</h1>
+    </div>
+    <div class="sidebar-section">
+        <h2>Recent</h2>
+    </div>
+    <div class="sidebar-section" onclick="createChatHistory()">
+        <button class="add-chat-btn">
+            <img src="/assets/icons/add-chat-icon.svg" alt="Button Image" />
+            <span>New Chat</span>
+        </button>
+    </div>
+    <div class="sidebar-section-container" id="chatHistoryList">
+        @foreach (var chatHistory in sortedChatHistories)
+        {
+            <div class="history-chats @(chatHistory.Id == activeChatHistoryId ? "active" : "")"
+                data-chat-id="@chatHistory.Id">
+                <img src="/assets/icons/chat-icon.svg">
+                <p>@chatHistory.Title</p>
+            </div>
+        }
+    </div>
+    <button class="clear-chat-history" onclick="clearChatHistory()">
+        <img src="/assets/icons/delete-icon.svg">
+        <p>Clear Chat History</p>
+    </button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+        const toggleButton = document.querySelector(".burger");
+        const rightSidebar = document.querySelector(".right-sidebar");
+        const mainContainer = document.querySelector(".main-container");
+
+        toggleButton.addEventListener("click", function ()
+        {
+            rightSidebar.classList.toggle("minimized");
+            mainContainer.classList.toggle("minimized");
+        });
+
+        document.querySelectorAll('.history-chats').forEach(item =>
+        {
+            item.addEventListener('click', function ()
+            {
+                document.querySelectorAll('.history-chats').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                var chatId = item.getAttribute('data-chat-id');
+                $('#selectedChatHistoryId').val(chatId); // Set the selected chat history ID
+                loadChatHistory(chatId); // Load chat history by chatId
+            });
+        });
+
+        // Set the active chat history on page load
+        var activeChatHistoryId = '@activeChatHistoryId';
+        if (activeChatHistoryId)
+        {
+            document.querySelectorAll('.history-chats').forEach(item =>
+            {
+                if (item.getAttribute('data-chat-id') === activeChatHistoryId)
+                {
+                    item.classList.add('active');
+                }
+            });
+            loadChatHistory(activeChatHistoryId);
+        }
+    });
+
+    function toggleSidebar()
+    {
+        const sidebarContent = document.querySelector('.sidebar-content');
+        const newDiv = document.querySelector('.new-div');
+        sidebarContent.classList.toggle('hide-content');
+        newDiv.classList.toggle('show-content');
+    }
+
+    function loadChatHistory(chatHistoryId)
+    {
+        $.get('/Chat/GetChatHistory', { chatHistoryId: chatHistoryId }, function (data)
+        {
+            $('#chatBox').empty();
+            data.messages.forEach(function (message)
+            {
+                $('#chatBox').append('<div><strong>' + (message.role === 'user' ? 'You' : 'Bot') + ':</strong> ' + message.parts[0].text + '</div>');
+            });
+        }).fail(function (xhr, status, error)
+        {
+            alert('Error: ' + error);
+        });
+    }
+
+    function updateSidebar(callback)
+    {
+        $.get('/Chat/GetChatHistories', function (data)
+        {
+            var chatHistoryList = $('#chatHistoryList');
+            chatHistoryList.empty();
+            data.forEach(function (chatHistory)
+            {
+                var chatItem = $('<div class="history-chats" data-chat-id="' + chatHistory.id + '"><img src="/assets/icons/chat-icon.svg"><p>' + chatHistory.title + '</p></div>');
+                chatItem.click(function ()
+                {
+                    document.querySelectorAll('.history-chats').forEach(i => i.classList.remove('active'));
+                    chatItem.addClass('active');
+                    $('#selectedChatHistoryId').val(chatHistory.id);
+                    loadChatHistory(chatHistory.id);
+                });
+                chatHistoryList.append(chatItem);
+            });
+            if (callback) callback();
+        }).fail(function (xhr, status, error)
+        {
+            alert('Error: ' + error);
+        });
+    }
+
+    function createChatHistory()
+    {
+        $.post('/Chat/CreateChatHistory', function (data)
+        {
+            updateSidebar(function ()
+            {
+                var newChatHistoryId = data.newChatHistoryId;
+                if (newChatHistoryId)
+                {
+                    $('#selectedChatHistoryId').val(newChatHistoryId);
+                    loadChatHistory(newChatHistoryId);
+                    location.reload(); // Reload the page to reflect the new chat history
+                }
+            });
+        }).fail(function (xhr, status, error)
+        {
+            if (xhr.status === 400)
+            {
+                alert('You can only create up to 5 chat histories.');
+            } else
+            {
+                alert('Error: ' + error);
+            }
+        });
+    }
+
+    function clearChatHistory()
+    {
+        var chatHistoryId = $('#selectedChatHistoryId').val();
+        var chatHistoryCount = $('#chatHistoryList .history-chats').length;
+
+        if (chatHistoryCount > 1)
+        {
+            $.post('/Chat/DeleteChatHistory', { chatHistoryId: chatHistoryId }, function ()
+            {
+                updateSidebar(function ()
+                {
+                    var mostRecentChatHistoryId = $('#chatHistoryList .history-chats').first().data('chat-id');
+                    if (mostRecentChatHistoryId)
+                    {
+                        $('#selectedChatHistoryId').val(mostRecentChatHistoryId);
+                        loadChatHistory(mostRecentChatHistoryId);
+                        location.reload();
+                    } else
+                    {
+                        $('#chatBox').empty();
+                    }
+                });
+            }).fail(function (xhr, status, error)
+            {
+                alert('Error: ' + error);
+            });
+        } else
+        {
+            $.post('/Chat/ClearChatHistory', { chatHistoryId: chatHistoryId }, function ()
+            {
+                updateSidebar(function ()
+                {
+                    var mostRecentChatHistoryId = $('#chatHistoryList .history-chats').first().data('chat-id');
+                    if (mostRecentChatHistoryId)
+                    {
+                        $('#selectedChatHistoryId').val(mostRecentChatHistoryId);
+                        loadChatHistory(mostRecentChatHistoryId);
+                        location.reload();
+                    } else
+                    {
+                        $('#chatBox').empty();
+                    }
+                });
+            }).fail(function (xhr, status, error)
+            {
+                alert('Error: ' + error);
+            });
+        }
+    }
+</script>

@@ -1,0 +1,117 @@
+@model List<CareerAI.Models.ChatHistory>
+
+@{
+    Layout = "_Sidebar";
+    ViewData["Title"] = "Chat";
+    ViewData["ShowRightSidebar"] = "true";
+    ViewData["RightSidebar"] = "ChatbotHistory";
+    ViewData["RightSidebarClass"] = "chatbot";
+
+    var userId = Context.Session.GetString("UserId");
+    var selectedChatHistoryId = ViewBag.SelectedChatHistoryId as string;
+    var mostRecentChatHistory = userId != null ? Model.OrderByDescending(ch => ch.UpdatedDate).FirstOrDefault() :
+    Model.FirstOrDefault();
+    var selectedChatHistory = !string.IsNullOrEmpty(selectedChatHistoryId) ? Model.FirstOrDefault(ch => ch.Id ==
+    selectedChatHistoryId) : mostRecentChatHistory;
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<div>
+    <h2>Chat</h2>
+    <div id="chatBox" style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll;">
+        <!-- Chat messages will be loaded here -->
+    </div>
+    <input type="text" id="messageInput" placeholder="Type your message here..." />
+    <button id="sendButton">Send</button>
+    <input type="hidden" id="selectedChatHistoryId" value="@selectedChatHistory?.Id" />
+</div>
+
+<script>
+    $(document).ready(function ()
+    {
+        // Load the selected chat history on page load
+        var chatHistoryId = $('#selectedChatHistoryId').val();
+        if (chatHistoryId)
+        {
+            loadChatHistory(chatHistoryId);
+        } else
+        {
+            loadGuestChatHistory(); // Load guest chat history
+        }
+
+        $('#sendButton').click(function ()
+        {
+            var message = $('#messageInput').val();
+            var chatHistoryId = $('#selectedChatHistoryId').val();
+            if (message.trim() === '')
+            {
+                alert('Please enter a message.');
+                return;
+            }
+            if (chatHistoryId)
+            {
+                $.post('/Chat/SendMessage', { chatHistoryId: chatHistoryId, message: message }, function (data)
+                {
+                    $('#chatBox').append('<div><strong>You:</strong> ' + message + '</div>');
+                    $('#chatBox').append('<div><strong>Bot:</strong> ' + data.response + '</div>');
+                    $('#messageInput').val('');
+                }).fail(function (xhr, status, error)
+                {
+                    alert('Error: ' + error);
+                });
+            } else
+            {
+                $.post('/Chat/SendGuestMessage', { message: message }, function (data)
+                {
+                    $('#chatBox').append('<div><strong>You:</strong> ' + message + '</div>');
+                    $('#chatBox').append('<div><strong>Bot:</strong> ' + data.response + '</div>');
+                    $('#messageInput').val('');
+                }).fail(function (xhr, status, error)
+                {
+                    alert('Error: ' + error);
+                });
+            }
+        });
+
+        // Set the selected chat history ID and load the chat history
+        $('.history-chats').click(function ()
+        {
+            var chatHistoryId = $(this).data('chat-id');
+            $('#selectedChatHistoryId').val(chatHistoryId);
+            loadChatHistory(chatHistoryId);
+        });
+
+        // Function to load chat history based on chat history ID
+        function loadChatHistory(chatHistoryId)
+        {
+            $.get('/Chat/GetChatHistory', { chatHistoryId: chatHistoryId }, function (data)
+            {
+                $('#chatBox').empty();
+                data.messages.forEach(function (message)
+                {
+                    $('#chatBox').append('<div><strong>' + (message.role === 'user' ? 'You' : 'Bot') + ':</strong> ' + message.parts[0].text + '</div>');
+                });
+            }).fail(function (xhr, status, error)
+            {
+                alert('Error: ' + error);
+            });
+        }
+
+        // Function to load guest chat history
+        function loadGuestChatHistory()
+        {
+            $.get('/Chat/GetGuestChatHistory', function (data)
+            {
+                $('#chatBox').empty();
+                data.messages.forEach(function (message)
+                {
+                    $('#chatBox').append('<div><strong>' + (message.role === 'user' ? 'You' : 'Bot') + ':</strong> ' + message.parts[0].text + '</div>');
+                });
+            }).fail(function (xhr, status, error)
+            {
+                alert('Error: ' + error);
+            });
+        }
+    });
+</script>

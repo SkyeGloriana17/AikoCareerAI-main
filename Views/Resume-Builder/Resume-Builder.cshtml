@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "_Sidebar";
+    ViewData["Title"] = "Homepage";
+    ViewData["ShowRightSidebar"] = "false";
+    ViewBag.ShowSpecialNavItem = true;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Resume-Builder.css" /> 
+}
+
+<body>
+<header>Resume Builder</header>
+<hr>
+<div class = "main-top">
+  <p class="top-message">By using Aikareer's Resume Builder, you agree that your information will be stored <br>
+	securely and used only for resume creation and editing purposes. <br>
+	Your privacy is important to us, and we are committed to keeping your data safe.
+	</p>
+      <div class = "button-container">
+        <button class = "top-button">
+            <span class = "icon"></span>
+            <span class = "button-text">I AGREE</span>
+        </button>
+        <button class = "top-button">
+            <span class = "icon"></span>
+            <span class = "button-text">AUTO-FILL DETAILS</span>
+        </button>
+      </div>
+</div>
+<br><br>
+
+<form action="Resume-Builder.php" method="post" enctype="multipart/form-data">
+<div class="resume_form">
+	<div class = "pic-name-container">
+        	<input type="text" class="fullname-text" placeholder="Put your full name Here" id="full_name" name="full_name" required>
+		<label for="pic" class="upload-label">
+			<img src="wwwroot/assets/icons/upload-pic-logo.png" alt="Upload 2x2 Picture" class="upload-logo">
+			<input type="file" id="pic" name="pic" accept="image/*" style="display: none;">
+		</label>
+	</div>
+ <hr>
+
+	<div class = "job-title-container">
+		<input type="text" class = "job-title-text" placeholder="Your Application Job Title" id="application_title" name="application_title" required>		
+	</div>
+	<hr>
+		
+	<div class="info-container">
+		<div class = "info-row">
+			<input type="text" placeholder="Phone Number" id="phone_number" name="phone_number" required>
+		</div>
+		<div class="info-row">
+			<input type="text" placeholder="Address City, State, Zip Code" id="address" name="address" required>
+			<input type="text" placeholder="Email Address" id="email_address" name="email_address" required>
+		</div>
+	</div>
+	<br>
+		
+	<legend>PROFESSIONAL SUMMARY</legend>
+	<hr>
+		<textarea placeholder="A concise 2-3 sentence summary highlighting your skills, experience, and career goals" id="pro_summary" name="pro_summary" rows="3" cols = "100"></textarea>
+	<br>
+		
+	<div class = "logo-container">
+		<img class = "img-logo" src = "/assets/icons/education-logo.png">
+	<legend>EDUCATION</legend>
+	</div>
+	<hr>	
+	<div class="education-container">
+		<div class = "education-row">
+			<input type="text" placeholder="University/School Name" id="school_name" name="school_name[]" required>
+			<input type="text" placeholder="Year start and end" id="school_year" name="school_year[]" required> 
+		</div>
+		<div class = "education-row">
+			<input type ="text" placeholder = "Degree/Strand/Grade Level" id = "school_level" name = "school_level[]" required>
+		</div>
+		<br>
+		<button type="button">Add entry for education</button>
+	</div>
+	<br>
+		
+	<div class = "logo-container">
+		<img class = "img-logo" src = "/assets/icons/work-logo.png">
+		<legend>EXPERIENCE</legend>
+	</div>
+	<hr>
+	<div class="experience-container">
+		<div class = "experience-row">
+			<input type="text" placeholder="Your Job Title" id="job_title" name="job_title[]" required>
+			<input type="text" placeholder="Year start and end" id="job_year" name="job_year[]" required>
+		</div>
+		<div class = "experience-row">				
+			<input type="text" placeholder="Company Name/Location" id="company_info" name="company_info[]" required>
+		</div>
+		<br>
+			<textarea placeholder="Brief description of responsibilities and achievements" id="job_summary" name="job_summary" rows="3" cols = "100"></textarea> 
+		<br>
+		<button type="button">Add entry for work experience</button>
+	</div>
+	<br>
+		
+	<div class = "logo-container">
+		<img class = "img-logo" src = "/assets/icons/skill-logo.png">
+		<legend>SKILLS</legend>
+	</div>
+	<hr>
+		<div class="skill-container">
+			<div class = "skill-row">
+				<input type="text" placeholder="Skill" id="skill" name="skill[]">
+				<input type="text" placeholder="Skill" id="skill" name="skill[]">
+				<button type="button" class="skill-button">Add skill</button>
+			</div>
+		</div>
+</div>
+	<br>
+
+	<input type="submit" value="Build and Print" class="submit-button">
+</form>
+</body>
+
+      

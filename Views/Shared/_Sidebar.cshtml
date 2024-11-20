@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" type="image/png" href="~/assets/Logo.svg">
+    <link rel="stylesheet" href="~/css/sidebar.css" />
+    <link rel="stylesheet" href="~/css/global.css" />
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-sidebar">
+            @await Html.PartialAsync("_LeftSidebar")
+        </div>
+        <div class="main-container @ViewData["RightSidebarClass"] @(ViewData["ShowRightSidebar"]?.ToString() == "false" ? "full-width" : "")">
+            @RenderBody()
+        </div>
+        @if (ViewData["ShowRightSidebar"]?.ToString() == "true")
+        {
+            <div class="right-sidebar @ViewData["RightSidebarClass"]" id="rightSidebar">
+                @if (ViewData["RightSidebar"]?.ToString() == "ChatHistory")
+                {
+                    @await Html.PartialAsync("_ChatHistorySidebar")
+                }
+                else if (ViewData["RightSidebar"]?.ToString() == "ChatbotHistory")
+                {
+                    @await Html.PartialAsync("_ChatbotHistorySidebar")
+                }
+                else if (ViewData["RightSidebar"]?.ToString() == "GuestChatbotHistory")
+                {
+                    @await Html.PartialAsync("_GuestChatbotHistorySidebar")
+                }
+            </div>
+        }
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

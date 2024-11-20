@@ -1,0 +1,300 @@
+/* Universal box-sizing for consistency */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: #FCF4E7;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  font-family: 'Ultra', serif;
+  font-size: 40px;
+  font-weight: 400px;
+}
+
+.main-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #E7F1FF;
+  border: 3px solid black;
+  border-radius: 7px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #E7F1FF;
+}
+
+.top-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  width: auto;
+  font-weight: bold;
+}
+
+.top-button:hover {
+  background-color: #D6EBFF;
+}
+
+.button-text{
+	display: inline-block;
+	font-size: 15px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FFD662;
+  position: relative;
+  border: 3px solid black;
+}
+
+/* Checkmark inside the circle */
+.icon::before {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #000;
+}
+
+legend {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  display: inline-block;
+}
+
+input,
+textarea {
+  border: 5px;
+  outline: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+input{
+	width: 300px;
+}
+
+button {
+  background-color: #E2E2E2;
+  color: #5A5A5A;
+  font-size: 15px;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.submit-button {
+  background-color: #CCDEFF;
+  color: #202C4D;
+  font-size: 25px;
+  padding: 10px 20px;
+  font-family: 'Ultra', serif;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.resume_form {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 3px solid black;
+  border-radius: 9px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo-container {
+  display: flex;
+}
+
+.img-logo {
+  width: 35px;
+  height: 30px;
+}
+
+.pic-name-container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.upload-label {
+  margin-left: auto;
+}
+
+.upload-logo {
+  width: 145px;
+  height: 145px;
+  border: 2px solid black;
+}
+
+.fullname-text {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: left;
+  color: #202C4D;
+  width: 100%;
+}
+
+.job-title-container{
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.job-title-text {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.info-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.info-row{
+	display: flex;
+	gap: 40px;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.info-row input{
+	flex: 1;
+	padding: 10px;
+	font-size: 15px;
+	width: 80%;
+	box-sizing: border-box;
+}
+
+.education-container,
+.experience-container{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.education-row,
+.experience-row {
+    display: flex;
+    gap: 800px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.education-row input,
+.experience-row input {
+    flex: 1;
+    padding: 10px;
+    font-size: 15px;
+	width: 60%;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.education-container button,
+.experience-container button {
+    align-self: flex-start; 
+    padding: 10px 20px;
+    background-color: #E2E2E2;
+    color: #5A5A5A;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.education-container button:hover,
+.experience-container button:hover {
+    background-color: #D6EBFF;
+}
+
+.skill-container{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+.skill-row{
+	display: flex;
+	align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.skill-row input[type="text"]{
+	flex: 1;
+	max-width: 150px;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.skill-button {
+  background-color: #E2E2E2;
+  color: #5A5A5A;
+  font-size: 15px;
+  padding: 5px 10px;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+}

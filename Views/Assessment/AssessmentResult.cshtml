@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_Sidebar";
+    ViewData["Title"] = "Homepage";
+    ViewData["ShowRightSidebar"] = "true";
+    ViewData["RightSidebar"] = "ChatHistory";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AssessmentResult.css" /> 
+}
+
+<div class="title-section">
+    <h1 class="title-page">Result</h1>
+    <img src="/assets/result-icon.svg">
+</div>
+<div class="result-box">
+    <h1>Title of Generated Result</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur sit amet sit amet</p>
+</div>
+
+<button type="submit" class="print"> Print</button>
+<div class="actions">
+    <div class="left-action">
+        <p>Not satisfied with the result? Take our Skill Gap Analysis to see how you measure up for your ideal career!</p>
+    </div>
+    <div class="right-action">
+        <p>Have questions? Chat with AIKO for answers!</p>
+    </div>
+</div>
+<div class="actions-btn">
+        <button class="assessment-btn">Assess My Skills!</button>
+        <button class="chat-aiko-btn">Chat Aiko</button>
+</div>

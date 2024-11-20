@@ -1,0 +1,114 @@
+@using CareerAI.Helper
+@model CareerAI.Models.ViewModel.RegisterViewModel
+@{
+    Layout = "_AccountLayout";
+    ViewData["Title"] = "Register";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/register.css" /> 
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    var firstError = ViewData.ModelState.Values.SelectMany(v => v.Errors).FirstOrDefault()?.ErrorMessage;
+    @Html.Popup("error", firstError);
+}
+
+@if (ViewData["EmailSent"] != null && (bool)ViewData["EmailSent"])
+{
+    @Html.Popup("success", "Verification Email Sent. Please check your email");
+}
+
+<div class="main-container">
+    <div class="left-container">
+        <h1 class="sign-up-title">
+           CREATE ACCOUNT
+        </h1>
+        <div class="input-container">
+            <form asp-action="Register" method="post" id="registerForm">
+                <div class="input">
+                    <label for="name">Name</label>
+                    <input class="input" type="text" name="Name" id="name" placeholder="Name" required>
+                </div>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input class="input" type="email" name="Email" id="email" placeholder="Email" required>
+                </div>
+                <label for="newPassword">New Password</label>
+                <div class="password-container input">
+                    <input type="password" asp-for="NewPassword" name="NewPassword" id="newPassword" placeholder="New Password" required>
+                </div>
+                <label for="confirmPassword">Confirm Password</label>
+                <div class="password-container input">
+                    <input type="password" name="ConfirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+
+                <div class="register-function">
+                    <button class="resend-email"> Resend Email</button>
+                    <div class="show-pass">
+                        <button type="button" id="toggleShowPassword" class="toggle-password-btn">
+                            <p id="togglePasswordText">Show Password</p>
+                            <img src="/assets/Register/eye-open.svg" alt="Show Password" id="toggleShowPasswordImage">
+                        </button>
+                    </div>
+                </div>
+
+                <span asp-validation-for="NewPassword" class="text-danger"></span>
+                <input type="submit" value="SUBMIT" class="submit-btn">
+            </form>
+            <div class="sign-in">
+            <p class="signup-text">Already have an account? <a href="/Account/Login"><span class="login">Login</span></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <div class="logo-top">
+            <div class="logo-name">
+                <h3>Career Finder</h3>
+                <h2>Aikareer</h2>
+            </div>
+            <img src="/assets/Logos.svg">
+        </div>
+        <div class="aiko-img">
+            <img src="/assets/Register/aiko.svg">
+        </div>
+        <h1 class="welcome-title">
+            WELCOME!
+        </h1>
+        <p class="message">Sign up to unlock personalized career tools and guidance with Aiko!</p>
+    </div>
+</div>
+<script>
+    document.getElementById('toggleShowPassword').addEventListener('click', function () {
+        var newPasswordInput = document.getElementById('newPassword');
+        var confirmPasswordInput = document.getElementById('confirmPassword');
+        var passwordImage = document.getElementById('toggleShowPasswordImage');
+        var togglePasswordText = document.getElementById('togglePasswordText');
+        
+        if (newPasswordInput.type === 'password' && confirmPasswordInput.type === 'password') {
+            newPasswordInput.type = 'text';
+            confirmPasswordInput.type = 'text';
+            passwordImage.src = '/assets/Register/eye-closed.svg';
+            passwordImage.alt = 'Hide Password';
+            togglePasswordText.textContent = 'Hide Password';
+        } else {
+            newPasswordInput.type = 'password';
+            confirmPasswordInput.type = 'password';
+            passwordImage.src = '/assets/Register/eye-open.svg';
+            passwordImage.alt = 'Show Password';
+            togglePasswordText.textContent = 'Show Password';
+        }
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', function (event) {
+        var newPassword = document.getElementById('newPassword').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (newPassword !== confirmPassword) {
+            event.preventDefault(); 
+            alert("Passwords do not match");
+        }
+    });
+</script>

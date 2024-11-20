@@ -1,0 +1,32 @@
+Namespace: CareerAI
+Areas/
+    Main/
+        Controllers/
+            HomeController.cs
+        Views/
+            Index.cshtml
+            Login.cshtml
+            Registration.cshtml
+    Admin/
+        Controllers/
+            HomeController.cs
+        Views/
+            Home/
+                Login.cshtml
+                Dashboard.cshtml
+                Reviews.cshtml
+Controllers/
+    // Other global controllers if needed
+Views/
+    Shared/
+        _Layout.cshtml
+    // Other global views if needed
+wwwroot/
+    css/
+    js/
+    lib/
+Models/
+    LoginViewModel.cs
+Program.cs
+Startup.cs
+appsettings.json

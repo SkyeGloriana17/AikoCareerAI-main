@@ -1,0 +1,103 @@
+.title-page {
+    margin: 2% 0;
+    font-family: 'Ultra';
+    font-weight: 500;
+    color: #252E49;
+    font-size: 2rem;
+}
+
+hr {
+    width:  50%;
+    border: 1px solid #202C4D;
+    margin-bottom: 3%;
+}
+
+.reminder {
+    font-family:'Montserrat';
+    font-weight: 600;
+    font-size: 1rem;
+    color: #252E49;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    margin: 4% 0 2% 0;
+    min-height: 50vh; /* This sets a minimum height but allows the box to grow */
+    background-color: #E3EEFF;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-image: url('/assets/bg-cat-blue.svg');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.suggested-answer {
+    margin-top: 5%;
+    padding: 2% 5%;
+    background-color: #426AD4;
+    color: white;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.main-question {
+    flex: 1; /* Allow .main-question to grow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8% 10%;
+    margin-top: -3%;
+}
+
+.main-question h1 {
+    font-family: 'Ultra';
+    font-weight: 500;
+    color: #252E49;
+    font-size: 1.5rem;
+    word-wrap: break-word; 
+}
+
+.answer-section {
+    margin-top: 5%;
+}
+
+.answer-section label {
+    font-family:'Montserrat';
+    color: #252E49;
+    font-weight: 800;
+}
+
+#answer {
+    width: 100%;
+    max-width: 50vw;
+    min-height: 15vh;
+    margin-top: 2%;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    padding: 3%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #252E49;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #CCDEFF;
+    border-radius: 20px;
+    font-family:'Ultra';
+    color: #252E49;
+    padding: 2% 0;
+    font-size: 1.45rem;
+    border: 2px solid black;
+    margin-top: 3%;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    background-color: #FFD662;
+}

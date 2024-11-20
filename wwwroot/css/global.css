@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ultra&family=Mukta:wght@400;700&display=swap');
+
+
+::-webkit-scrollbar {
+    width:10px;
+    height:12px;
+}
+
+::-webkit-scrollbar-track {
+    background:#B0CDFB;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #252E49;
+    border-radius: 20px;
+}
+
+:root {
+    --blue: #8EABE1;
+    --orange: #E05723;
+    --peach: #fcf4e7;
+    --dark-green: #696935;
+    --yellow: #FFD661;
+    --brown: #F3B426;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+}
+

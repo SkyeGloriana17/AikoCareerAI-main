@@ -1,0 +1,88 @@
+@model CareerAI.Models.ViewModel.LoginViewModel
+@using CareerAI.Helper
+@{
+    Layout = "_AccountLayout";
+    ViewData["Title"] = "Login";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Login.css" /> 
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    var firstError = ViewData.ModelState.Values.SelectMany(v => v.Errors).FirstOrDefault()?.ErrorMessage;
+    if (!string.IsNullOrEmpty(firstError))
+    {
+        @Html.Popup("error", firstError)
+    }
+}
+
+<div class="main-container">
+    <div class="left-container">
+        <div class="logo-top">
+            <img src="/assets/Logos.svg">
+            <div class="logo-name">
+                <h3>Career Finder</h3>
+                <h2>Aikareer</h2>
+            </div>
+        </div>
+        <div class="aiko-img">
+            <img src="/assets/Login/aiko.svg">
+        </div>
+        <h1 class="welcome-title">
+            WELCOME!
+        </h1>
+        <p class="message">Let Aiko assist you on your journey to success!</p>
+    </div>
+
+    <form asp-action="Login" method="post" class="right-container">
+        <h1 class="sign-in-title">
+            SIGN IN
+        </h1>
+        <p class="sign-in-message">
+            Please log in to access your account
+        </p>
+        <div class="input-container">
+            <div class="input">
+                <label for="email">Email Address</label><br>
+                <input class="input" type="email" name="email" id="email" placeholder="Enter your email here" required>
+            </div>
+            <br><br>
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" name="password" id="password" placeholder="Enter your password here" required>
+                <button type="button" id="togglePassword">
+                    <img src="/assets/icons/show-pass.svg" alt="Show Password" id="togglePasswordImage">
+                </button>
+            </div>
+        </div>
+        <div class="login-function">
+            <label for="rememberMe" class="remember-me-label">
+                <input type="checkbox" name="rememberMe" id="rememberMe">
+                <span class="custom-checkbox"></span>&nbsp;&nbsp; <span class="remember-me-text">Keep me logged in</span>
+            </label>
+            <a href="/Account/ForgotPassword" class="forgot-pass">Forgot Password?</a>
+        </div>
+        <input type="submit" value="LOGIN" class="submit-btn">
+        <div class="register">
+            <p class="signup-text">Not a member? <a href="/Account/Register"><span class="register-link">Register now</span></a></p>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        var passwordInput = document.getElementById('password');
+        var passwordImage = document.getElementById('togglePasswordImage');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordImage.src = '/assets/icons/hide-pass.svg';
+            passwordImage.alt = 'Hide Password';
+        } else {
+            passwordInput.type = 'password';
+            passwordImage.src = '/assets/icons/show-pass.svg';
+            passwordImage.alt = 'Show Password';
+        }
+    });
+</script>

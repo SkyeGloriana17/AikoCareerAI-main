@@ -1,0 +1,53 @@
+.container {
+    height: 100vh;
+    padding: 5%;
+    background-color: #202c4d;
+    background-image: url('/assets/404-bg.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bot {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.error-title {
+    text-align: center;
+    margin: 1% 0 1.2% 0;
+    font-family: 'Montserrat';
+    color: #89c2fa;
+    font-size: 2.5rem;
+}
+
+.error-message {
+    color: white;
+    font-family: 'Montserrat';
+    text-align: center;
+    width: 55%; 
+    margin: 0 auto; 
+    opacity: .9;
+}
+
+.go-to-homepage {
+    font-family: 'Montserrat';
+    padding: .8% 6%;
+    display: block;
+    margin: 3% auto;
+    background-color: #56abff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.go-to-homepage:hover {
+    cursor: pointer;
+    background-color: #2d91f6;
+}

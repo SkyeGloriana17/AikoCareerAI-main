@@ -1,0 +1,70 @@
+@model CareerAI.Models.ChatHistory
+
+<span class="burger material-symbols-outlined" onclick="toggleSidebar()">menu_open</span>
+<div class="sidebar-content">
+    <div class="sidebar-section">
+        <h1>Guest Chat</h1>
+    </div>
+    <div class="sidebar-section">
+        <h2>Recent</h2>
+    </div>
+    <div class="sidebar-section-container" id="chatHistoryList">
+        <div class="history-chats active" data-chat-id="guest">
+            <img src="/assets/icons/chat-icon.svg">
+            <p>Guest Chat</p>
+        </div>
+    </div>
+    <button class="clear-chat-history" onclick="clearGuestChatHistory()">
+        <img src="/assets/icons/delete-icon.svg">
+        <p>Clear Chat History</p>
+    </button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function ()
+    {
+        const toggleButton = document.querySelector(".burger");
+        const rightSidebar = document.querySelector(".right-sidebar");
+        const mainContainer = document.querySelector(".main-container");
+
+        toggleButton.addEventListener("click", function ()
+        {
+            rightSidebar.classList.toggle("minimized");
+            mainContainer.classList.toggle("minimized");
+        });
+    });
+
+    function toggleSidebar()
+    {
+        const sidebarContent = document.querySelector('.sidebar-content');
+        const newDiv = document.querySelector('.new-div');
+        sidebarContent.classList.toggle('hide-content');
+        newDiv.classList.toggle('show-content');
+    }
+
+    function clearGuestChatHistory()
+    {
+        $.post('/Chat/ClearGuestChatHistory', function ()
+        {
+            loadGuestChatHistory();
+        }).fail(function (xhr, status, error)
+        {
+            alert('Error: ' + error);
+        });
+    }
+
+    function loadGuestChatHistory()
+    {
+        $.get('/Chat/GetGuestChatHistory', function (data)
+        {
+            $('#chatBox').empty();
+            data.messages.forEach(function (message)
+            {
+                $('#chatBox').append('<div><strong>' + (message.role === 'user' ? 'You' : 'Bot') + ':</strong> ' + message.parts[0].text + '</div>');
+            });
+        }).fail(function (xhr, status, error)
+        {
+            alert('Error: ' + error);
+        });
+    }
+</script>

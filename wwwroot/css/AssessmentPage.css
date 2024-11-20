@@ -1,0 +1,491 @@
+.main-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-side-top {
+    display: flex;  /* Ensure left-side-top is a flex container */
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0; /* Make sure no extra padding is applied here */
+}
+.right-side-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 35%;
+}
+
+.dev-btn {
+    background-color: white;
+    padding: 2% 1%;
+    border-radius: 100px;
+    border: 2px solid black;
+    box-shadow: 1px 3px 2px rgba(0,0,0,0.8);
+    cursor:pointer;
+}
+
+.dev-btn img {
+    width:90%;
+}
+
+.highlight {
+    background-color: rgb(167, 207, 250);
+    border-radius: 10px;
+}
+
+.search-bar {
+    width: 100%;
+    position: relative;
+}
+
+
+.search-bar img {
+    width: 2.5%;
+    position:absolute;
+    top:15px;
+    right:25px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 14px 60px 14px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-family:'Montserrat';
+    box-shadow: 3px 3px 2px rgba(0,0,0,0.8);
+}
+
+.search-box::placeholder{
+    font-family:'Montserrat';
+}
+
+.account-infos {
+    display: flex;
+    align-items: center;
+    padding: 2% 5%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius:30px;
+    margin-left: 20px;
+    box-shadow: 3px 3px 2px rgba(0,0,0,0.8);
+}
+
+.account-icons {
+    margin-right: 10px;
+    width: 14%;
+}
+
+
+.account-name h1 {
+    font-family: 'Ultra';
+    font-weight: 400;
+    font-size: 1rem;
+    color: #202C4D;
+}
+
+.account-name p {
+    font-family:'Montserrat';
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.title {
+    margin: 4% 0 1% 0;
+    font-family: 'Ultra';
+    color: #202C4D;
+    font-weight: 500;
+}
+
+
+
+.banner {
+    margin-top: -1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 5%;
+}
+
+.left-banner-container{
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-banner-container {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-banner-left,.title-banner-right {
+    margin-left: auto;
+    font-family:'Montserrat';
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #202C4D;
+    margin-bottom: 20px;
+}
+
+.title-banner-left {
+    background-color: #FFD662;
+}
+
+.title-banner-right {
+    background-color: #FFA8C1;
+}
+
+.left-banner{
+    height: 260px;
+    background-color: #E79C2F;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 5%;
+    color: white;
+    font-family: 'Montserrat';
+    display: flex;
+    position:relative;
+}
+
+.left-left-banner {
+    width: 59%;
+}
+
+.left-right-banner {
+    width: 40%;
+}
+
+.left-left-banner h1{
+    font-size: 1.5rem;
+    margin-bottom: 4%;
+}
+
+.left-left-banner h2{
+    position:absolute;
+    bottom:14%;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.left-right-banner img {
+    position:absolute;
+    top:-5px;
+    right:0;
+}
+
+
+
+.right-banner {
+    height: 260px;
+    background-color: #FFDFE8;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 8% 10%;
+    font-family:'Montserrat';
+}
+
+.right-banner-title {
+    padding: .5% 10%;
+    background-color:#FF7AA1;
+    border: 2px solid #2F2F2F;
+    border-radius: 20px;
+    color: white;
+    font-family:'Montserrat';
+    font-size: 1rem;
+}
+
+.right-banner p{
+    margin: 9% 0;
+    font-weight: 500;
+}
+
+.find-career{
+    display: block;
+    margin: 0 auto;
+    padding: 1.5% 10%;
+    background-color:#FF7AA1;
+    border: 2px solid #2F2F2F;
+    border-radius: 20px;
+    color: white;
+    font-family:'Montserrat';
+    font-size: 1.1rem;
+}
+
+.assessment-category {
+    background-color: #536D9C;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    color: #FCF4E7;
+    padding: 2% 3%;
+    margin: 10% 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: padding .5s ease;
+}
+
+#first-assessment {
+    margin: 5% 0 0 0 !important; 
+}
+
+.assessment-category:hover{
+    cursor:pointer;
+    background-color:#3b5380;
+    padding: 3% 3%;
+}
+
+
+.left-category{
+    display: flex;
+    align-items: center;
+    width: 35%;
+}
+
+.left-category img {
+    width: 5%;
+}
+
+#interest {
+    width:7%;
+}
+
+#skills {
+    width:13%;
+}
+
+#personality {
+    width:8%;
+}
+
+#values {
+    width:8%;
+}
+
+.left-category h2 {
+    font-family:'Ultra';
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    margin-left: 20px;
+}
+
+.right-category {
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+}
+.assessment-category p{
+    font-family:'Montserrat';
+    font-weight: 500;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.question-container {
+    width: 100%;
+    background-color: white;
+    border: 2px solid #595959;
+    border-radius: 15px;
+    box-shadow: 7px 7px 3px rgba(0,0,0,0.8);
+    margin: 5% 0;
+}
+
+.question-container {
+    margin: 5% 0 0 0;
+}
+
+.title-question {
+    padding: 1.8% 5%;
+    font-family:'Montserrat';
+    text-align: center;
+}
+
+.title-question h1 {
+    color: #252E49;
+    font-size: 1.2rem;
+}
+
+hr {
+    border: 1px solid black;
+    opacity: .5;
+}
+
+
+.choice-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    margin: 20px auto;
+    padding: 1% 5%;
+}
+.choice {
+    display: flex;
+    align-items: center;
+    padding: 3% 5%;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.choice label {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: white;
+}
+
+.choice:first-child {
+    background-color: #FFA8C1;
+}
+
+.choice:nth-child(2) {
+    background-color: #E05723
+}
+
+.choice:nth-child(3) {
+    background-color: #7994C4
+}
+
+.choice:nth-child(4) {
+    background-color: #696935
+}
+
+.choice input[type="radio"] {
+    margin-right: 20px;
+    transform: scale(1.15);
+    cursor: pointer;
+    appearance: none; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+}
+
+.choice input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #202C4D; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.submit-btn {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 1.7rem;
+    color: #202C4D;
+    background-color: #FFD661;
+    border: 2px solid black;
+    margin-top: 6%;
+    padding: 2% 10%;
+    width: 100%;
+    border-radius: 30px;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    cursor:pointer;
+    background-color: #fac638;
+}
+
+.popup {
+    display: none; 
+    position: fixed;
+    z-index: 9999999999999999; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    background-color: #FCF4E7;
+    margin: 0 auto;
+    border: 2px solid #352b2b;
+    width: 80%;
+    max-width: 750px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 1px rgba(37, 34, 34, 0.898);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#devPopup-content {
+    max-width:650px;
+}
+
+
+.top-popup {
+    padding: 3% 8%;
+    display: flex;
+    justify-content:space-between;
+    border-radius: 20px;
+    border-bottom: 2px solid #352b2b;
+}
+
+.title-popup {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.title-popup img {
+    width: 13%;
+    margin-right: 15px;
+}
+
+.title-popup h1{
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family:'Ultra';
+    color: #252E49;
+}
+
+.title-popup h2{
+    font-family:'Montserrat';
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #252E49
+}
+
+
+.close-btn {
+    width: 5%;
+    margin-top: -22px;
+    cursor:pointer;
+}
+
+#main-popup-dev {
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr);    
+    gap: 20px; 
+    padding: 5% 5%;                          
+}
+
+#main-popup-dev img {
+    width: 80%;    
+    justify-self: center;  
+    align-self: center;   
+}

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_Sidebar";
+    ViewData["Title"] = "AssessmentA";
+    ViewData["ShowRightSidebar"] = "true";
+    ViewData["RightSidebar"] = "ChatHistory";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AssessmentAI.css" /> 
+}
+
+<h1 class="title-page">Generated Questions</h1>
+<hr>
+<h2 class="reminder"><b>Reminder:</b> AI-generated questions require open-ended answers. Unrelated responses will prompt a re-entry.</h2>
+
+<div class="question-box">
+    <div class="suggested-answer">
+        <p>Sample answers will appear if an incorrect response is entered</p>
+    </div>
+    <div class="main-question">
+        <h1>Describe a project or activity you enjoyed working on. What skills did you use, and what made it rewarding?</h1>
+    </div>  
+</div>
+
+<form asp-action="AssessmentAI" method="post">
+    <div class="answer-section">
+        <label for="answer">Enter your answer below:</label><br>
+        <textarea id="answer" name="answer" placeholder="Enter message here"  required></textarea>
+        <button type="submit" class="submit-btn">Next</button>
+    </div>
+</form>

@@ -1,0 +1,102 @@
+@{
+    bool showSpecialNavItem = ViewBag.ShowSpecialNavItem ?? false;
+}
+
+<div class="nav-bar">
+    <div class="logo-top">
+        <img src="/assets/logo.svg">
+        <div class="logo-title">
+            <h2>Career Finder</h2>
+            <h1>Aikareer</h1>
+        </div>
+    </div>
+    
+    <div class="navs">
+        <div>
+            <div class="nav active">
+                <img src="/assets/Homepage/home-icon.svg">
+                <a href="/Home/Index">Overview</a>
+            </div>
+            <div class="nav">
+                <img src="/assets/Homepage/assessment-icon.svg">
+                <a href="/Assessment/Assessment">Assessment</a>
+            </div>
+            @if (showSpecialNavItem)
+            {
+                <div class="nav-extend">
+                    <div class="sub-nav"><img src="/assets/Assessment/user-nav.svg"> <a href="/Assessment/Assessment">Demographics</a></div>
+                    <div class="sub-nav"><img src="/assets/Assessment/interest-nav.png"> <a href="/Assessment/Assessment">Interests</a></div>
+                    <div class="sub-nav"><img src="/assets/Assessment/skills-nav.svg"> <a href="/Assessment/Assessment">Skill</a></div>
+                    <div class="sub-nav"><img src="/assets/Assessment/personality-nav.svg"> <a href="/Assessment/Assessment">Personality</a></div>
+                    <div class="sub-nav"><img src="/assets/Assessment/values-nav.svg"> <a href="/Assessment/Assessment">Values</a></div>
+                </div>
+            }
+            <div class="nav">
+                <img src="/assets/Homepage/chat-icon.svg">
+                <a href="/chat">Chat Aiko</a>
+            </div>
+            <div class="nav">
+                <img src="/assets/Homepage/build-resume-icon.svg">
+                <a href="/build-resume">Build Resume</a>
+            </div>
+        </div>
+
+        <div>
+            @if (showSpecialNavItem)
+            {
+                <div class="nav">
+                    <img src="/assets/Assessment/clear-icon.svg">
+                    <a href="/special">Clear Answer</a>
+                </div>
+            }
+            <div class="nav" id="logout">
+                <img src="/assets/Homepage/logout-icon.svg">
+                <a href="/logout">Logout</a>
+            </div>
+            <div class="sign-up-box" style="@(showSpecialNavItem ? "display:none;" : "")">
+                <div class="sign-up-image">
+                    <img class="signup-image" src="/assets/Homepage/bg-signup.svg">
+                </div>
+                <div class="signup-title">
+                    <h1> Signup <br> for Full Access</h1>
+                </div>
+                <div class="signup">
+                    <button>Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all navigation items
+    var navItems = document.querySelectorAll('.nav');
+
+    // Add click event listener to each navigation item
+    navItems.forEach(function(navItem) {
+        navItem.addEventListener('click', function() {
+            // Remove 'active' class from all navigation items
+            navItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked navigation item
+            this.classList.add('active');
+        });
+    });
+
+    // Highlight the current page's navigation item on page load
+    var currentPath = window.location.pathname;
+    navItems.forEach(function(navItem) {
+        var link = navItem.querySelector('a');
+        if (link && link.getAttribute('href') === currentPath) {
+            // Remove 'active' class from all navigation items
+            navItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+            navItem.classList.add('active');
+        }
+    });
+});
+</script>   
